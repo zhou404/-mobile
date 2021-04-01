@@ -1,459 +1,1059 @@
-{include file='public/header'}
-{include file='public/nbanner'}
-<!--<script src="__STATIC__/index/js/index.js"></script>-->
-<link rel="stylesheet" href="__STATIC__/index/css/product.css">
-<link rel="stylesheet" href="__STATIC__/index/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-<style>
-    /*img{*/
-    /*max-width: 100%;*/
-    /*}*/
-</style>
-<div class="nav-two">
-    <div class="nav-two-content">
-        {volist name='productall' id='vo'}
-        <div>
-            <a href="javascript:void(0);" data-name="{$vo.urls}">{$vo.title}</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> 赵鸭子 </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=0.3, minimum-scale=0.1, user-scalable=yes" />-->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content=" 赵鸭子 ">
+    <meta name="description" content=" 赵鸭子">
+    <link href="__STATIC__/index/css/index.css" rel="stylesheet">
+    <script src="__STATIC__/index/js/jquery-1.8.3.min.js"></script>
+    <script src="__STATIC__/index/js/jquery.slider.js"></script>
+</head>
+<body>
+<!--nav[start]-->
+<div class="main">
+    <div class="nav" style="position: fixed;top: 0;z-index: 999">
+        <div class="continue" style="padding: 0!important;">
+            <div class="nav-logo z-ms-3 l">
+                <img src="{$company.logo}" alt="" style="cursor:pointer;" onclick="location.href='/index.php'">
+            </div>
+            <div class="nav-list z-ms-7 l">
+                <div class="mo dowon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul>
+                    <li class="{empty name='id'}active{/empty}"><a href="/index.php">首页</a></li>
+                    {volist name='nav' id='vo'}
+                    <li class="{notempty name='id'}{eq name='id' value='$vo.id'}active{/eq}{/notempty}">
+                        <a href="{:url('/'.$vo.urls)}">{$vo.title}</a>
+                        <!--{if condition='array_key_exists("children",$vo)'}-->
+                        <!--<ul class="two-nav" style="margin: 0!important;">-->
+                        <!--{volist name='$vo.children' id='vo1'}-->
+                        <!--<li>-->
+                        <!--<a href="">{$vo1.title}</a>-->
+                        <!--</li>-->
+                        <!--{/volist}-->
+                        <!--</ul>-->
+                        <!--{/if}-->
+                    </li>
+                    {/volist}
+                    <!--<li><a href="">企业介绍</a></li>-->
+                    <!--<li><a href="">品牌介绍</a></li>-->
+                    <!--<li><a href="product.html">特色菜品</a></li>-->
+                    <!--<li><a href="news.html">新闻中心</a></li>-->
+                    <!--<li><a href="consulting.html">加盟咨询</a></li>-->
+                </ul>
+            </div>
+            <div class="z-ms-2 l">
+                <div class="header-r">
+                    <img src="__STATIC__/index/images/header-r.png" alt="">
+                </div>
+            </div>
+            <div class="clear"></div>
         </div>
-        {/volist}
-        
     </div>
 
-</div>
-<style>
+    <style>
+        .header-r {
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-    .n-banner{height:700px;}
-    .n-banner img{height:700px;}
-    .nav-two{position:fixed;top:100px;display:flex;justify-content: center;z-index:10002;width:100%;background-color:#f2cb47;height:50px;line-height:50px;border-top:2px solid white;}
-    .nav-two .nav-two-content{width:984px;display:flex; justify-content: space-between;}
-    .nav-two .nav-two-content a{font-size:14px;color:#666;display:block;}
-    .nav-two .nav-two-content div:hover a{color:#000;text-decoration: none;}
+        .header-r img {
+            width: 100%;
+        }
+    </style>
+    <div class="contant-left">
+        <ul>
+            <li>
+                <p>
+                    <img src="__STATIC__/index/images/phone-left.png" alt="">
 
-    .n-banner{margin-top:150px;}
-</style>
-<div class="left-all">
-    <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-</div>
-<div class="leftNav">
-    <div class="leftline"></div>
-    <ul>
-        {volist name='productall' id='vo' key='key'}
-        <li data-name="{$vo.urls}" class="{eq name='key' value='1'}active{/eq}">
-            <div class="icon">
-                <div class="iconradius"></div>
+                </p>
+                <div>
+                    {$company.company_phone}
+                </div>
+            </li>
+            <li>
+                <p>
+                    <img src="__STATIC__/index/images/dou-left.png" alt="">
+
+                </p>
+                <div>
+                    <img src="{$company.dewm}" alt="">
+                </div>
+            </li>
+            <li>
+                <p>
+                    <img src="__STATIC__/index/images/wx-left.png" alt="">
+
+                </p>
+                <div>
+                    <img src="{$company.ewm}" alt="">
+                </div>
+            </li>
+            <li>
+                <p>
+                    <img src="__STATIC__/index/images/wb-left.png" alt="">
+
+                </p>
+                <div>
+                    <img src="{$company.wewm}" alt="">
+                </div>
+            </li>
+        </ul>
+    </div>
+    <style>
+        .two-nav {
+            position: absolute;
+            background: #f2cb47;
+            top: 100px;
+            width: 100%;
+            padding: 0;
+            left: 0;
+            border-top: 1px solid #fff;
+        }
+
+        .contant-left {
+            position: fixed;
+            left: 0;
+            top: 45%;
+            z-index: 999;
+        }
+
+        .contant-left ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .contant-left ul li {
+            display: block;
+            margin: 2px 0;
+            height: 60px;
+            width: 60px;
+            background: #2b2a29;
+            border-radius: 6px;
+            text-align: center;
+            position: relative;
+            line-height: 45px;
+            transition: .3s;
+
+        }
+
+        .contant-left ul li:hover {
+            background-color: #efbe1b;
+        }
+
+        .contant-left ul li p {
+            /*display: inline-block;*/
+            font-family: MicrosoftYaHei-Bold;
+            font-size: 14px;
+            font-weight: bold;
+            font-stretch: normal;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        .contant-left ul li p img {
+            display: inline-block;
+            margin: 10px auto 0;
+        }
+
+        .contant-left ul li div {
+            position: absolute;
+            left: 65px;
+            top: 0;
+            background: #efbe1b;
+            max-width: 160px;
+            max-height: 160px;
+            border-radius: 6px;
+            padding: 2px;
+            display: none;
+            font-family: MicrosoftYaHei-Bold;
+            font-size: 14px;
+            font-weight: bold;
+            font-stretch: normal;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('.contant-left ul li').hover(function () {
+                $('.contant-left ul li').find('div').hide();
+                $(this).find('div').fadeTo(300, 1);
+            }, function () {
+                $('.contant-left ul li').find('div').hide();
+            })
+        })
+    </script>
+    <div class="n-banner">
+        <img src="{$banner.0.image.url}" alt="">
+    </div>
+    <!--<script src="__STATIC__/index/js/index.js"></script>-->
+    <link rel="stylesheet" href="__STATIC__/index/css/product.css">
+    <link rel="stylesheet" href="__STATIC__/index/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <style>
+        /*img{*/
+        /*max-width: 100%;*/
+        /*}*/
+    </style>
+    <div class="nav-two">
+        <div class="nav-two-content">
+            {volist name='productall' id='vo'}
+            <div>
+                <a href="javascript:void(0);" data-name="{$vo.urls}">{$vo.title}</a>
             </div>
-            <div class="name">{$vo.title}</div>
-        </li>
-        {/volist}
-        
-    </ul>
-</div>
-<style>
-    .leftNav{position:absolute;left:150px;top:1050px;display:flex;}
-    .leftNav .leftline{border-left:1px solid #a5a5a5;width:1px;}
-    .leftNav ul{margin-left:-8px;padding:0;margin-bottom:0;}
-    .leftNav ul li{list-style:none;height:26px;line-height:26px;margin-bottom:20px;display:flex;justify-content: space-between;width:80px;cursor:pointer;}
-    .leftNav ul li:last-child{margin-bottom:0px;}
-    .leftNav ul li .icon{background-color:white;height:26px;width:16px;}
-    .leftNav ul li .icon .iconradius{width:16px;height:16px;margin-top:5px;margin-bottom:5px;border-radius:8px;background-color:#fff;border:1px solid #a5a5a5;}
-    .leftNav ul li.active .icon .iconradius{background-color:#efbe1b;}
-    .leftNav ul li .name{font-size:14px;}
-    .leftNav ul li.active .name{color:#efbe1b;}
+            {/volist}
 
-</style>
-<div class="product-cont ">
-    <div class="product-center all">
-        <div class="c-title">产品中心</div>
+        </div>
 
-        <!--<div class="c-img">-->
+    </div>
+    <style>
+
+        .n-banner {
+            height: 700px;
+        }
+
+        .n-banner img {
+            height: 700px;
+        }
+
+        .nav-two {
+            position: fixed;
+            top: 100px;
+            display: flex;
+            justify-content: center;
+            z-index: 10002;
+            width: 100%;
+            background-color: #f2cb47;
+            height: 50px;
+            line-height: 50px;
+            border-top: 2px solid white;
+        }
+
+        .nav-two .nav-two-content {
+            width: 984px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nav-two .nav-two-content a {
+            font-size: 14px;
+            color: #666;
+            display: block;
+        }
+
+        .nav-two .nav-two-content div:hover a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .n-banner {
+            margin-top: 150px;
+        }
+    </style>
+    <div class="left-all">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="leftNav">
+        <div class="leftline"></div>
+        <ul>
+            {volist name='productall' id='vo' key='key'}
+            <li data-name="{$vo.urls}" class="{eq name='key' value='1'}active{/eq}">
+                <div class="icon">
+                    <div class="iconradius"></div>
+                </div>
+                <div class="name">{$vo.title}</div>
+            </li>
+            {/volist}
+
+        </ul>
+    </div>
+    <style>
+        .leftNav {
+            position: absolute;
+            left: 150px;
+            top: 1050px;
+            display: flex;
+        }
+
+        .leftNav .leftline {
+            border-left: 1px solid #a5a5a5;
+            width: 1px;
+        }
+
+        .leftNav ul {
+            margin-left: -8px;
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        .leftNav ul li {
+            list-style: none;
+            height: 26px;
+            line-height: 26px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: 80px;
+            cursor: pointer;
+        }
+
+        .leftNav ul li:last-child {
+            margin-bottom: 0px;
+        }
+
+        .leftNav ul li .icon {
+            background-color: white;
+            height: 26px;
+            width: 16px;
+        }
+
+        .leftNav ul li .icon .iconradius {
+            width: 16px;
+            height: 16px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-radius: 8px;
+            background-color: #fff;
+            border: 1px solid #a5a5a5;
+        }
+
+        .leftNav ul li.active .icon .iconradius {
+            background-color: #efbe1b;
+        }
+
+        .leftNav ul li .name {
+            font-size: 14px;
+        }
+
+        .leftNav ul li.active .name {
+            color: #efbe1b;
+        }
+
+    </style>
+    <div class="product-cont ">
+        <div class="product-center all">
+            <div class="c-title">产品中心</div>
+
+            <!--<div class="c-img">-->
             <!--<div class="c-img-top1">-->
-                <!--<div class="c-img-top1-left">-->
-                    <!--{volist name='is_top' id='vo' offset="0" length='1'}-->
-                    <!--<div class="product-box">-->
-                        <!--<a href="{:url('/'.$vo.urls)}" class="abc" style="background: url('{$vo.image.url}') no-repeat center center">-->
-                            <!--&lt;!&ndash;<img src="{$vo.image.url}" alt="">&ndash;&gt;-->
-                        <!--</a>-->
-                        <!--<div class="product-nav">-->
-                            <!--<a href="{:url('/'.$vo.urls)}">-->
-                                <!--<p>{$vo.title}</p>-->
-                                <!--<p>{$vo.introduction}</p>-->
-                            <!--</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--{/volist}-->
-                <!--</div>-->
-                <!--<div class="c-img-top1-right">-->
-                    <!--{volist name='is_top' id='vo' offset="1" length='2'}-->
-                    <!--<div class="c-img-top1-right-img">-->
-                        <!--<div class="product-box">-->
-                            <!--<a href="{:url('/'.$vo.urls)}" class="abc" style="background: url('{$vo.image.url}') no-repeat center center">-->
-                                <!--&lt;!&ndash;<img src="{$vo.image.url}" alt="">&ndash;&gt;-->
-                            <!--</a>-->
-                            <!--<div class="product-nav">-->
-                                <!--<a href="{:url('/'.$vo.urls)}">-->
-                                    <!--<p>{$vo.title}</p>-->
-                                    <!--<p>{$vo.introduction}</p>-->
-                                <!--</a>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--{/volist}-->
-                <!--</div>-->
+            <!--<div class="c-img-top1-left">-->
+            <!--{volist name='is_top' id='vo' offset="0" length='1'}-->
+            <!--<div class="product-box">-->
+            <!--<a href="{:url('/'.$vo.urls)}" class="abc" style="background: url('{$vo.image.url}') no-repeat center center">-->
+            <!--&lt;!&ndash;<img src="{$vo.image.url}" alt="">&ndash;&gt;-->
+            <!--</a>-->
+            <!--<div class="product-nav">-->
+            <!--<a href="{:url('/'.$vo.urls)}">-->
+            <!--<p>{$vo.title}</p>-->
+            <!--<p>{$vo.introduction}</p>-->
+            <!--</a>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--{/volist}-->
+            <!--</div>-->
+            <!--<div class="c-img-top1-right">-->
+            <!--{volist name='is_top' id='vo' offset="1" length='2'}-->
+            <!--<div class="c-img-top1-right-img">-->
+            <!--<div class="product-box">-->
+            <!--<a href="{:url('/'.$vo.urls)}" class="abc" style="background: url('{$vo.image.url}') no-repeat center center">-->
+            <!--&lt;!&ndash;<img src="{$vo.image.url}" alt="">&ndash;&gt;-->
+            <!--</a>-->
+            <!--<div class="product-nav">-->
+            <!--<a href="{:url('/'.$vo.urls)}">-->
+            <!--<p>{$vo.title}</p>-->
+            <!--<p>{$vo.introduction}</p>-->
+            <!--</a>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--{/volist}-->
+            <!--</div>-->
             <!--</div>-->
             <!--<div class="c-img-bottom1">-->
-                <!--{volist name='is_top' id='vo' offset="3"  key='key'}-->
-                <!--<div class="product-box" style="">-->
-                    <!--<a href="{:url('/'.$vo.urls)}" class="abc" style="background: url('{$vo.image.url}') no-repeat center center">-->
-                        <!--&lt;!&ndash;<img src="{$vo.image.url}" alt="">&ndash;&gt;-->
-                    <!--</a>-->
-                    <!--<div class="product-nav">-->
-                        <!--<a href="{:url('/'.$vo.urls)}">-->
-                            <!--<p>{$vo.title}</p>-->
-                            <!--<p>{$vo.introduction}</p>-->
-                        <!--</a>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--{/volist}-->
+            <!--{volist name='is_top' id='vo' offset="3"  key='key'}-->
+            <!--<div class="product-box" style="">-->
+            <!--<a href="{:url('/'.$vo.urls)}" class="abc" style="background: url('{$vo.image.url}') no-repeat center center">-->
+            <!--&lt;!&ndash;<img src="{$vo.image.url}" alt="">&ndash;&gt;-->
+            <!--</a>-->
+            <!--<div class="product-nav">-->
+            <!--<a href="{:url('/'.$vo.urls)}">-->
+            <!--<p>{$vo.title}</p>-->
+            <!--<p>{$vo.introduction}</p>-->
+            <!--</a>-->
             <!--</div>-->
-        <!--</div>-->
-    </div>
-    <div class="product-boxpan">
-        <div class="product-pan">
-            
-        {volist name='productall' id='vo'}
-            <div class="product-one" data-name="{$vo.urls}">
-                <div class="product-head">
-                    <div class="product-info">
-                        <div class="product-title-pan">
-                            <div class="product-title">
-                                {$vo.introduction}
+            <!--</div>-->
+            <!--{/volist}-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="product-boxpan">
+            <div class="product-pan">
+
+                {volist name='productall' id='vo'}
+                <div class="product-one" data-name="{$vo.urls}">
+                    <div class="product-head">
+                        <div class="product-info">
+                            <div class="product-title-pan">
+                                <div class="product-title">
+                                    {$vo.introduction}
+                                </div>
+                            </div>
+                            <div class="product-title-small">
+                                {$vo.article.0.title}
+                            </div>
+                            <div class="product-title-info">
+                                {$vo.article.0.details}
                             </div>
                         </div>
-                        <div class="product-title-small">
-                            {$vo.article.0.title}
+                        <div class="product-head-img" data-link="{:url('/'.$vo.urls.'/'.$vo.article.0.id)}">
+                            <div class="product-head-image"
+                                 style="background-image:url('{$vo.article.0.image.url}')"></div>
+                            <div class="product-head-img-name">{$vo.article.0.title}</div>
                         </div>
-                        <div class="product-title-info">
-                            {$vo.article.0.details}
-                        </div>
                     </div>
-                    <div class="product-head-img" data-link="{:url('/'.$vo.urls.'/'.$vo.article.0.id)}">
-                        <div class="product-head-image" style="background-image:url('{$vo.article.0.image.url}')"></div>
-                        <div class="product-head-img-name">{$vo.article.0.title}</div>
-                    </div>
-                </div>
-                <div class="product-list">
-                    
-                    {volist name='vo.article' id='vo1' key ='key1' }
-                    {if condition='$key1 > 1'}
-                    <div class="product-head-img" data-link="{:url('/'.$vo1.nav.urls.'/'.$vo1.id)}">
-                        <div class="product-head-image" style="background-image:url('{$vo1.image.url}')"></div>
-                        <div class="product-head-img-name">{$vo1.title}</div>
-                    </div>
-                    {/if}
-                    {/volist}
-                    
+                    <div class="product-list">
 
+                        {volist name='vo.article' id='vo1' key ='key1' }
+                        {if condition='$key1 > 1'}
+                        <div class="product-head-img" data-link="{:url('/'.$vo1.nav.urls.'/'.$vo1.id)}">
+                            <div class="product-head-image" style="background-image:url('{$vo1.image.url}')"></div>
+                            <div class="product-head-img-name">{$vo1.title}</div>
+                        </div>
+                        {/if}
+                        {/volist}
+
+
+                    </div>
                 </div>
+                {/volist}
+
             </div>
-        {/volist}
-            
         </div>
-    </div>
-    <!--<div class="product-all all">-->
+        <!--<div class="product-all all">-->
         <!--<div class="c-title" style="margin-top: 0">所有产品</div>-->
         <!--<div class="a-img">-->
-            <!--<div class="a-img-box" style="display: block">-->
-                <!--{volist name='artilce' id='vo' key='key'}-->
-                <!--<div class="col-xs-3">-->
-                    <!--<img style="width: 100%;height: 180px;" src="{$vo.image.url}" alt="">-->
-                    <!--<div class="a-img-text">-->
-                        <!--<a href="{:url('/'.$vo.nav.urls.'/'.$vo.id)}" >-->
-                            <!--<p>{$vo.title}</p>-->
-                            <!--<p style="padding: 0 10px;line-height: 20px">{$vo.details|strip_tags|htmlspecialchars|mb_substr=0,30}...</p>-->
-                        <!--</a>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--{/volist}-->
-                <!--<div class="clear"></div>-->
-            <!--</div>-->
+        <!--<div class="a-img-box" style="display: block">-->
+        <!--{volist name='artilce' id='vo' key='key'}-->
+        <!--<div class="col-xs-3">-->
+        <!--<img style="width: 100%;height: 180px;" src="{$vo.image.url}" alt="">-->
+        <!--<div class="a-img-text">-->
+        <!--<a href="{:url('/'.$vo.nav.urls.'/'.$vo.id)}" >-->
+        <!--<p>{$vo.title}</p>-->
+        <!--<p style="padding: 0 10px;line-height: 20px">{$vo.details|strip_tags|htmlspecialchars|mb_substr=0,30}...</p>-->
+        <!--</a>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--{/volist}-->
+        <!--<div class="clear"></div>-->
+        <!--</div>-->
         <!--</div>-->
         <!--<div>-->
         <!--</div>-->
-    <!--</div>-->
-</div>
-<style>
-    .product-boxpan{width:1203px;margin:0 auto;}
-    .product-boxpan:after{content:"";display:block;clear:both;}
-    .product-pan{width:992px;float:right;}
-    .product-one{margin-bottom:100px;}
-    .product-one:last-child{margin-bottom:10px;}
-    .product-head{display:flex;justify-content: space-between;}
-    .product-info{width:396px;margin-right:25px;}
-    .product-title-pan{background-image:url("__STATIC__/index/images/producticon.png");height:139px;width:253px;background-repeat:no-repeat;background-size:auto 100%;background-position:83% 0;}
-    .product-title-pan .product-title{width:170px;height:100px;font-size:40px;line-height:60px;padding-top:40px;}
-    .product-info .product-title-small{margin-top:40px;font-size:26px;}
-    .product-info .product-title-info{font-size:14px;margin-top:20px;color:#666;}
-    .product-head-img{cursor:pointer;}
-    .product-head .product-head-img{border:1px solid #efbe1b;transition: .3s;flex:1;height:345px;margin-left:30px;margin-top:42px;}
-    .product-head .product-head-img .product-head-image{width:100%;height:100%;background-size:cover;position:relative;left:-30px;top:-42px;}
-    .product-head .product-head-img .product-head-img-name{width:132px;height:34px;line-height:34px;background-color:#efbe1b;transition: .3s;color:white;position:relative;top:-17px;margin:0 auto;text-align:center;font-size:16px;}
-    .product-head .product-head-img:hover{border-color:#2b2a29;}
-    .product-head .product-head-img:hover .product-head-img-name{background-color:#2b2a29}
-    .product-list{display:flex;flex-wrap: wrap;justify-content: space-between;margin-top:50px;}
-    .product-list .product-head-img{width:300px;height:260px;}
-    .product-list .product-head-img .product-head-image{width:100%;height:187px;background-size:cover;position:relative;}
-    .product-list .product-head-img .product-head-img-name{width:132px;height:34px;line-height:34px;background-color:#efbe1b;transition: .3s;color:white;margin:10px auto;text-align:center;font-size:16px;}
-    .product-list .product-head-img:hover .product-head-img-name{background-color:#2b2a29}
-</style>
-<script>
-    $(function(){
-        $('.product-head-img').click(function(){
-            window.open(
-                $(this).data('link')
-            );
-        })
-        $(".product-list").each(function(){
-           var len =  $(".product-head-img", $(this)).length;
-           var m = len % 3;
-           if(m == 2){
-                $(this).append("<div class='product-head-img'/>");
-           }
-        });
-        var pos = [];
-        $(".product-one").each(function(){
-            var name = $(this).data("name");
-            var offset = $(this).offset().top-150;
-            pos.push({name,offset});
+        <!--</div>-->
+    </div>
+    <style>
+        .product-boxpan {
+            width: 1203px;
+            margin: 0 auto;
+        }
 
+        .product-boxpan:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
 
-        });
+        .product-pan {
+            width: 992px;
+            float: right;
+        }
 
-        $(window).scroll(function(){
-            var st = $(window).scrollTop();
-            if(st>800){
-                $(".leftNav").css({"position":"fixed",top:250});
-            }else{
-                $(".leftNav").css({"position":"absolute",top:1050});
-            }
-            var max = 0;
-            for (var i=0;i<pos.length;i++){
-                if(st>pos[i].offset){
-                    max = i;
+        .product-one {
+            margin-bottom: 100px;
+        }
+
+        .product-one:last-child {
+            margin-bottom: 10px;
+        }
+
+        .product-head {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .product-info {
+            width: 396px;
+            margin-right: 25px;
+        }
+
+        .product-title-pan {
+            background-image: url("/images/producticon.png");
+            height: 139px;
+            width: 253px;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            background-position: 83% 0;
+        }
+
+        .product-title-pan .product-title {
+            width: 170px;
+            height: 100px;
+            font-size: 40px;
+            line-height: 60px;
+            padding-top: 40px;
+        }
+
+        .product-info .product-title-small {
+            margin-top: 40px;
+            font-size: 26px;
+        }
+
+        .product-info .product-title-info {
+            font-size: 14px;
+            margin-top: 20px;
+            color: #666;
+        }
+
+        .product-head-img {
+            cursor: pointer;
+        }
+
+        .product-head .product-head-img {
+            border: 1px solid #efbe1b;
+            transition: .3s;
+            flex: 1;
+            height: 345px;
+            margin-left: 30px;
+            margin-top: 42px;
+        }
+
+        .product-head .product-head-img .product-head-image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            position: relative;
+            left: -30px;
+            top: -42px;
+        }
+
+        .product-head .product-head-img .product-head-img-name {
+            width: 132px;
+            height: 34px;
+            line-height: 34px;
+            background-color: #efbe1b;
+            transition: .3s;
+            color: white;
+            position: relative;
+            top: -17px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .product-head .product-head-img:hover {
+            border-color: #2b2a29;
+        }
+
+        .product-head .product-head-img:hover .product-head-img-name {
+            background-color: #2b2a29
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+
+        .product-list .product-head-img {
+            width: 300px;
+            height: 260px;
+        }
+
+        .product-list .product-head-img .product-head-image {
+            width: 100%;
+            height: 187px;
+            background-size: cover;
+            position: relative;
+        }
+
+        .product-list .product-head-img .product-head-img-name {
+            width: 132px;
+            height: 34px;
+            line-height: 34px;
+            background-color: #efbe1b;
+            transition: .3s;
+            color: white;
+            margin: 10px auto;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .product-list .product-head-img:hover .product-head-img-name {
+            background-color: #2b2a29
+        }
+    </style>
+    <script>
+        $(function () {
+            $('.product-head-img').click(function () {
+                window.open(
+                    $(this).data('link')
+                );
+            })
+            $(".product-list").each(function () {
+                var len = $(".product-head-img", $(this)).length;
+                var m = len % 3;
+                if (m == 2) {
+                    $(this).append("<div class='product-head-img'/>");
                 }
-            }
-            $(".leftNav li.active").removeClass("active");
-            $(".leftNav li:eq("+max+")").addClass("active");
-        });
-        $(".nav-two-content a,.leftNav ul li").click(function(){
-            var name = $(this).data("name");
-            for(var i=0;i<pos.length;i++){
-                if(name==pos[i].name){
-                    $("body,html").stop().animate({scrollTop:pos[i].offset+1});
+            });
+            var pos = [];
+            $(".product-one").each(function () {
+                var name = $(this).data("name");
+                var offset = $(this).offset().top - 150;
+                pos.push({name, offset});
+
+
+            });
+
+            $(window).scroll(function () {
+                var st = $(window).scrollTop();
+                if (st > 800) {
+                    $(".leftNav").css({"position": "fixed", top: 250});
+                } else {
+                    $(".leftNav").css({"position": "absolute", top: 1050});
                 }
-            }
+                var max = 0;
+                for (var i = 0; i < pos.length; i++) {
+                    if (st > pos[i].offset) {
+                        max = i;
+                    }
+                }
+                $(".leftNav li.active").removeClass("active");
+                $(".leftNav li:eq(" + max + ")").addClass("active");
+            });
+            $(".nav-two-content a,.leftNav ul li").click(function () {
+                var name = $(this).data("name");
+                for (var i = 0; i < pos.length; i++) {
+                    if (name == pos[i].name) {
+                        $("body,html").stop().animate({scrollTop: pos[i].offset + 1});
+                    }
+                }
+            });
         });
-    });
-</script>
-<!--<style>-->
+    </script>
+    <!--<style>-->
     <!--.product-cont .product-center .c-img-bottom1 .product-box a{-->
-        <!--position: relative!important;-->
+    <!--position: relative!important;-->
     <!--}-->
     <!--.pagination{float: left;}-->
     <!--.product-cont .product-all{-->
-        <!--margin: 50px auto;-->
+    <!--margin: 50px auto;-->
     <!--}-->
     <!--.product-cont .product-center .c-img-top1 {-->
-        <!--display: flex;-->
-        <!--justify-content: space-between;-->
-        <!--height: 420px;-->
+    <!--display: flex;-->
+    <!--justify-content: space-between;-->
+    <!--height: 420px;-->
     <!--}-->
 
     <!--.product-cont .product-center .c-img-bottom1 {-->
-        <!--display: flex;-->
-        <!--justify-content: space-between;-->
-        <!--/*height: 251px;*/-->
-        <!--margin-top: 10px;-->
-        <!--flex-wrap: wrap;-->
+    <!--display: flex;-->
+    <!--justify-content: space-between;-->
+    <!--/*height: 251px;*/-->
+    <!--margin-top: 10px;-->
+    <!--flex-wrap: wrap;-->
     <!--}-->
 
     <!--.product-cont .product-center .c-img-bottom1 .product-box {-->
-        <!--width: 32.5%;-->
-        <!--height: 252px;-->
-        <!--margin-bottom: 20px;-->
-        <!--position: relative;-->
+    <!--width: 32.5%;-->
+    <!--height: 252px;-->
+    <!--margin-bottom: 20px;-->
+    <!--position: relative;-->
     <!--}-->
 
     <!--.product-cont .product-center .c-img-top1 .c-img-top1-left {-->
-        <!--flex: 1;-->
-        <!--margin-right: 10px;-->
-        <!--overflow: hidden;-->
-        <!--height: 100%;-->
+    <!--flex: 1;-->
+    <!--margin-right: 10px;-->
+    <!--overflow: hidden;-->
+    <!--height: 100%;-->
     <!--}-->
 
     <!--.product-cont .product-center .c-img-top1 .product-box {-->
-        <!--width: 100%;-->
-        <!--height: 100%;-->
-        <!--position: relative;-->
+    <!--width: 100%;-->
+    <!--height: 100%;-->
+    <!--position: relative;-->
     <!--}-->
 
     <!--.product-cont .product-center .c-img-top1 .c-img-top1-right {-->
-        <!--width: 40%;-->
-        <!--display: flex;-->
-        <!--flex-direction: column;-->
-        <!--justify-content: space-between;-->
-        <!--overflow: hidden;-->
+    <!--width: 40%;-->
+    <!--display: flex;-->
+    <!--flex-direction: column;-->
+    <!--justify-content: space-between;-->
+    <!--overflow: hidden;-->
     <!--}-->
 
     <!--.product-cont .product-center .c-img-top1 .c-img-top1-right .product-box {-->
-        <!--width: 100%;-->
-        <!--height: 205px;-->
+    <!--width: 100%;-->
+    <!--height: 205px;-->
     <!--}-->
 
     <!--.product-cont .product-center .c-img-top1 .product-box img, .product-cont .product-center .c-img-bottom1 img {-->
-        <!--width: 100%;-->
-        <!--height: 100%;-->
+    <!--width: 100%;-->
+    <!--height: 100%;-->
     <!--}-->
 
     <!--.product-cont .product-center .c-img-top1 .product-box a, .product-cont .product-center .c-img-bottom1 .product-box a {-->
-        <!--width: 100%;-->
-        <!--height: 100%;-->
-        <!--display: block;-->
-        <!--position: absolute;-->
+    <!--width: 100%;-->
+    <!--height: 100%;-->
+    <!--display: block;-->
+    <!--position: absolute;-->
     <!--}-->
 
     <!--.product-cont .product-center .c-img-top1 .product-box .product-nav, .product-cont .product-center .c-img-bottom1 .product-box .product-nav {-->
-        <!--width: 100%;-->
-        <!--height: 100%;-->
-        <!--position: absolute;-->
-        <!--top: 0;-->
-        <!--left: 0;-->
-        <!--line-height: 100%;-->
+    <!--width: 100%;-->
+    <!--height: 100%;-->
+    <!--position: absolute;-->
+    <!--top: 0;-->
+    <!--left: 0;-->
+    <!--line-height: 100%;-->
     <!--}-->
 
 
     <!--.c-img-bottom .product-box {-->
-        <!--width: 32.5%;-->
-        <!--padding: 10px 0 10px 10px;-->
+    <!--width: 32.5%;-->
+    <!--padding: 10px 0 10px 10px;-->
     <!--}-->
 
     <!--.c-img-bottom .product-box img {-->
-        <!--width: 100% !important;-->
-        <!--height: 184px;-->
+    <!--width: 100% !important;-->
+    <!--height: 184px;-->
     <!--}-->
 
     <!--.c-img-top .product-box, .c-img-top .product-box {-->
-        <!--position: relative;-->
+    <!--position: relative;-->
     <!--}-->
 
     <!--.product-nav {-->
-        <!--position: absolute;-->
-        <!--background: rgba(0, 0, 0, 0.4);-->
-        <!--padding-top: 20%;-->
-        <!--color: #fff;-->
-        <!--width: 100%;-->
-        <!--height: 150px;-->
-        <!--display: none;-->
-        <!--top: -290px;-->
-        <!--opacity: 0;-->
+    <!--position: absolute;-->
+    <!--background: rgba(0, 0, 0, 0.4);-->
+    <!--padding-top: 20%;-->
+    <!--color: #fff;-->
+    <!--width: 100%;-->
+    <!--height: 150px;-->
+    <!--display: none;-->
+    <!--top: -290px;-->
+    <!--opacity: 0;-->
     <!--}-->
 
     <!--.product-nav a {-->
-        <!--color: #fff-->
+    <!--color: #fff-->
     <!--}-->
 
     <!--.product-nav a:hover {-->
-        <!--color: #fff;-->
-        <!--text-decoration: none;-->
+    <!--color: #fff;-->
+    <!--text-decoration: none;-->
     <!--}-->
     <!--.product-nav a p:first-child{-->
-        <!--font-family: MicrosoftYaHei;-->
-        <!--font-size: 24px;-->
-        <!--font-weight: bold;-->
-        <!--font-stretch: normal;-->
-        <!--line-height: 36px;-->
-        <!--letter-spacing: 2px;-->
-        <!--color: #ffffff;-->
+    <!--font-family: MicrosoftYaHei;-->
+    <!--font-size: 24px;-->
+    <!--font-weight: bold;-->
+    <!--font-stretch: normal;-->
+    <!--line-height: 36px;-->
+    <!--letter-spacing: 2px;-->
+    <!--color: #ffffff;-->
     <!--}-->
     <!--.product-nav a p:last-child{-->
-        <!--font-family: MicrosoftYaHei;-->
-        <!--font-size: 16px;-->
-        <!--font-weight: bold;-->
-        <!--font-stretch: normal;-->
-        <!--line-height: 36px;-->
-        <!--letter-spacing: 1px;-->
-        <!--color: #ffffff;-->
+    <!--font-family: MicrosoftYaHei;-->
+    <!--font-size: 16px;-->
+    <!--font-weight: bold;-->
+    <!--font-stretch: normal;-->
+    <!--line-height: 36px;-->
+    <!--letter-spacing: 1px;-->
+    <!--color: #ffffff;-->
     <!--}-->
     <!--.a-img-text {-->
-        <!--position: absolute;-->
-        <!--background: rgba(0, 0, 0, 0.5);-->
-        <!--padding-top: 40px;-->
-        <!--color: #fff;-->
-        <!--height: 180px;-->
-        <!--top: 0px;-->
-        <!--display: none;-->
-        <!--width: calc(100% - 30px);-->
-        <!--opacity: 0;-->
-        <!--overflow: hidden;-->
+    <!--position: absolute;-->
+    <!--background: rgba(0, 0, 0, 0.5);-->
+    <!--padding-top: 40px;-->
+    <!--color: #fff;-->
+    <!--height: 180px;-->
+    <!--top: 0px;-->
+    <!--display: none;-->
+    <!--width: calc(100% - 30px);-->
+    <!--opacity: 0;-->
+    <!--overflow: hidden;-->
     <!--}-->
 
     <!--.a-img-box .col-xs-3 {-->
-        <!--margin-top: 10px;-->
-        <!--position: relative;-->
+    <!--margin-top: 10px;-->
+    <!--position: relative;-->
     <!--}-->
 
     <!--.a-img-text a {-->
-        <!--color: #fff-->
+    <!--color: #fff-->
     <!--}-->
     <!--.a-img-text a p:first-child{-->
-        <!--font-family: MicrosoftYaHei;-->
-        <!--font-size: 32px;-->
-        <!--font-weight: normal;-->
-        <!--font-stretch: normal;-->
-        <!--line-height: 36px;-->
-        <!--letter-spacing: 2px;-->
-        <!--/*color: #ffffff;*/-->
+    <!--font-family: MicrosoftYaHei;-->
+    <!--font-size: 32px;-->
+    <!--font-weight: normal;-->
+    <!--font-stretch: normal;-->
+    <!--line-height: 36px;-->
+    <!--letter-spacing: 2px;-->
+    <!--/*color: #ffffff;*/-->
     <!--}-->
     <!--.a-img-text a p:last-child{-->
-        <!--font-family: MicrosoftYaHei;-->
-        <!--font-size: 12px;-->
-        <!--font-weight: normal;-->
-        <!--font-stretch: normal;-->
-        <!--line-height: 30px;-->
-        <!--letter-spacing: 1px;-->
-        <!--/*color: #ffffff;*/-->
+    <!--font-family: MicrosoftYaHei;-->
+    <!--font-size: 12px;-->
+    <!--font-weight: normal;-->
+    <!--font-stretch: normal;-->
+    <!--line-height: 30px;-->
+    <!--letter-spacing: 1px;-->
+    <!--/*color: #ffffff;*/-->
     <!--}-->
     <!--.a-img-text a:hover {-->
-        <!--color: #fff;-->
-        <!--text-decoration: none;-->
+    <!--color: #fff;-->
+    <!--text-decoration: none;-->
     <!--}-->
     <!--.pagination li a,.pagination li span{-->
-        <!--margin: 0 10px;-->
-        <!--color: #333;-->
+    <!--margin: 0 10px;-->
+    <!--color: #333;-->
     <!--}-->
-<!--</style>-->
-<!--<script>-->
+    <!--</style>-->
+    <!--<script>-->
     <!--$(function () {-->
-        <!--$('.c-img .abc').hover(function () {-->
-            <!--// $().height();-->
-            <!--$('.abc').siblings('.product-nav').css({opacity: 0, display: 'none'});-->
-            <!--$(this).siblings('.product-nav').css({opacity: 1, display: 'block'});-->
-        <!--})-->
-        <!--$('.a-img-box img').hover(function () {-->
-            <!--$('.a-img-box').find('.a-img-text').css({opacity: 0, display: 'none'})-->
-            <!--$(this).siblings('.a-img-text').css({opacity: 1, display: 'block'});-->
-        <!--})-->
-        <!--$('.product-nav').mouseleave(function () {-->
-            <!--$('.abc').siblings('.product-nav').css({opacity: 0, display: 'none'});-->
-        <!--})-->
-        <!--$('.a-img-text').mouseleave(function () {-->
-            <!--$('.a-img-text').css({opacity: 0, display: 'none'});-->
-        <!--})-->
+    <!--$('.c-img .abc').hover(function () {-->
+    <!--// $().height();-->
+    <!--$('.abc').siblings('.product-nav').css({opacity: 0, display: 'none'});-->
+    <!--$(this).siblings('.product-nav').css({opacity: 1, display: 'block'});-->
+    <!--})-->
+    <!--$('.a-img-box img').hover(function () {-->
+    <!--$('.a-img-box').find('.a-img-text').css({opacity: 0, display: 'none'})-->
+    <!--$(this).siblings('.a-img-text').css({opacity: 1, display: 'block'});-->
+    <!--})-->
+    <!--$('.product-nav').mouseleave(function () {-->
+    <!--$('.abc').siblings('.product-nav').css({opacity: 0, display: 'none'});-->
+    <!--})-->
+    <!--$('.a-img-text').mouseleave(function () {-->
+    <!--$('.a-img-text').css({opacity: 0, display: 'none'});-->
+    <!--})-->
     <!--})-->
     <!--// $('.pagination').find('li').eq(0).html('上一页');-->
 
-<!--</script>-->
-{include file='public/footer'}
+    <!--</script>-->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title> 赵鸭子 </title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+        <!--<meta name="viewport" content="width=device-width, initial-scale=0.3, minimum-scale=0.1, user-scalable=yes" />-->
+        <meta name="renderer" content="webkit">
+        <meta name="keywords" content=" 赵鸭子 ">
+        <meta name="description" content=" 赵鸭子">
+        <link href="__STATIC__/index/css/index.css" rel="stylesheet">
+        <script src="__STATIC__/index/js/jquery-1.8.3.min.js"></script>
+        <script src="__STATIC__/index/js/jquery.slider.js"></script>
+    </head>
+    <body>
+    <!--nav[start]-->
+    <div class="main">
+        <div class="nav" style="position: fixed;top: 0;z-index: 999">
+            <div class="continue" style="padding: 0!important;">
+                <div class="nav-logo z-ms-3 l">
+                    <img src="{$company.logo}" alt="" style="cursor:pointer;" onclick="location.href='/index.php'">
+                </div>
+                <div class="nav-list z-ms-7 l">
+                    <div class="mo dowon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul>
+                        <li class="{empty name='id'}active{/empty}"><a href="/index.php">首页</a></li>
+                        {volist name='nav' id='vo'}
+                        <li class="{notempty name='id'}{eq name='id' value='$vo.id'}active{/eq}{/notempty}">
+                            <a href="{:url('/'.$vo.urls)}">{$vo.title}</a>
+                            <!--{if condition='array_key_exists("children",$vo)'}-->
+                            <!--<ul class="two-nav" style="margin: 0!important;">-->
+                            <!--{volist name='$vo.children' id='vo1'}-->
+                            <!--<li>-->
+                            <!--<a href="">{$vo1.title}</a>-->
+                            <!--</li>-->
+                            <!--{/volist}-->
+                            <!--</ul>-->
+                            <!--{/if}-->
+                        </li>
+                        {/volist}
+                        <!--<li><a href="">企业介绍</a></li>-->
+                        <!--<li><a href="">品牌介绍</a></li>-->
+                        <!--<li><a href="product.html">特色菜品</a></li>-->
+                        <!--<li><a href="news.html">新闻中心</a></li>-->
+                        <!--<li><a href="consulting.html">加盟咨询</a></li>-->
+                    </ul>
+                </div>
+                <div class="z-ms-2 l">
+                    <div class="header-r">
+                        <img src="__STATIC__/index/images/header-r.png" alt="">
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <style>
+            .header-r {
+                height: 100px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .header-r img {
+                width: 100%;
+            }
+        </style>
+        <div class="contant-left">
+            <ul>
+                <li>
+                    <p>
+                        <img src="__STATIC__/index/images/phone-left.png" alt="">
+
+                    </p>
+                    <div>
+                        {$company.company_phone}
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <img src="__STATIC__/index/images/dou-left.png" alt="">
+
+                    </p>
+                    <div>
+                        <img src="{$company.dewm}" alt="">
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <img src="__STATIC__/index/images/wx-left.png" alt="">
+
+                    </p>
+                    <div>
+                        <img src="{$company.ewm}" alt="">
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        <img src="__STATIC__/index/images/wb-left.png" alt="">
+
+                    </p>
+                    <div>
+                        <img src="{$company.wewm}" alt="">
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <style>
+            .two-nav {
+                position: absolute;
+                background: #f2cb47;
+                top: 100px;
+                width: 100%;
+                padding: 0;
+                left: 0;
+                border-top: 1px solid #fff;
+            }
+
+            .contant-left {
+                position: fixed;
+                left: 0;
+                top: 45%;
+                z-index: 999;
+            }
+
+            .contant-left ul {
+                padding: 0;
+                margin: 0;
+            }
+
+            .contant-left ul li {
+                display: block;
+                margin: 2px 0;
+                height: 60px;
+                width: 60px;
+                background: #2b2a29;
+                border-radius: 6px;
+                text-align: center;
+                position: relative;
+                line-height: 45px;
+                transition: .3s;
+
+            }
+
+            .contant-left ul li:hover {
+                background-color: #efbe1b;
+            }
+
+            .contant-left ul li p {
+                /*display: inline-block;*/
+                font-family: MicrosoftYaHei-Bold;
+                font-size: 14px;
+                font-weight: bold;
+                font-stretch: normal;
+                letter-spacing: 1px;
+                color: #ffffff;
+            }
+
+            .contant-left ul li p img {
+                display: inline-block;
+                margin: 10px auto 0;
+            }
+
+            .contant-left ul li div {
+                position: absolute;
+                left: 65px;
+                top: 0;
+                background: #efbe1b;
+                max-width: 160px;
+                max-height: 160px;
+                border-radius: 6px;
+                padding: 2px;
+                display: none;
+                font-family: MicrosoftYaHei-Bold;
+                font-size: 14px;
+                font-weight: bold;
+                font-stretch: normal;
+                letter-spacing: 1px;
+                color: #ffffff;
+            }
+        </style>
+        <script>
+            $(function () {
+                $('.contant-left ul li').hover(function () {
+                    $('.contant-left ul li').find('div').hide();
+                    $(this).find('div').fadeTo(300, 1);
+                }, function () {
+                    $('.contant-left ul li').find('div').hide();
+                })
+            })
+        </script>
+    </div>
+    </body>
+    </html>
+</div>
