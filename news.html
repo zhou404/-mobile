@@ -1,0 +1,134 @@
+{include file='public/header'}
+{include file='public/nbanner'}
+<link rel="stylesheet" href="__STATIC__/index/css/news.css">
+<link rel="stylesheet" href="__STATIC__/index/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+
+<div class="nav-two">
+    <div class="nav-two-content">
+        <div>
+            <a href="javascript:void(0);">品牌通讯</a>
+        </div>
+    </div>
+
+</div>
+<style>
+    .nav-two{position:fixed;top:100px;display:flex;justify-content: center;z-index:10002;width:100%;background-color:#f2cb47;height:50px;line-height:50px;border-top:2px solid white;}
+    .nav-two .nav-two-content{width:984px;display:flex; justify-content: center;}
+    .nav-two .nav-two-content a{font-size:14px;color:#666;display:block;}
+    .nav-two .nav-two-content div:hover a{color:#000;text-decoration: none;}
+
+    .n-banner{margin-top:150px;}
+</style>
+<div class="news-box">
+    <!--<div class="c-title">-->
+        <!--新闻中心-->
+    <!--</div>-->
+    <div class="news">
+        <div class="z-ms-6 l new-text">
+            <div class="news-text">
+                <div class="news-list">
+                    <div class="news-list-left l z-ms-3">
+                        <img src="__STATIC__/index/images/lianxi.png" alt="">
+                    </div>
+                    <div class="news-list-right l z-ms-9">
+                        <p>全国服务电话</p>
+                        <p><label>400-0838-226</label></p>
+                    </div>
+                </div>
+                <div class="news-list">
+                    <div class="news-list-left l z-ms-3">
+                        <img src="__STATIC__/index/images/dizhi.png" alt="">
+                    </div>
+                    <div class="news-list-right l z-ms-9">
+                        <p>地址: <span>四川省绵阳市三台县花园镇工业集中发展区绿溪优食谷</span></p>
+                        <p>ADD：Lvxi Youshigu, Industrial Concentration Development Zone，
+                            Huayuan Town, Santai County, Mianyang City, Sichuan Province</p>
+                        <p>铁骑力士集团官网：https://www.tqlsgroup.com/</p>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="z-ms-6 l">
+            <div style="background-image:url('__STATIC__/index/images/map.png');width:100%;height:500px;background-size: cover;"></div>
+        </div>
+        <div class="clear"></div>
+        <!--{volist name='artilce' id='vo'}-->
+        <!--<div class="news-item">-->
+            <!--<div class="left" style="width: 20%;">-->
+                <!--<a href="{:url('/'.$vo.nav.urls.'/'.$vo.id)}" style="min-height: 161px;display: block;background: url('{$vo.image.url}') no-repeat center center">-->
+                    <!--&lt;!&ndash;<img src="{$vo.image.url}" alt="">&ndash;&gt;-->
+                <!--</a>-->
+            <!--</div>-->
+            <!--<div class="middle" style="float: left;padding: 0 20px;">-->
+                <!--<div><a style="font-family: MicrosoftYaHei-Bold;font-size: 22px;font-weight: bold;font-stretch: normal;line-height: 36px;letter-spacing: 2px;color: #333333;" href="{:url('/'.$vo.nav.urls.'/'.$vo.id)}">{$vo.title}</a></div>-->
+                <!--<div style="padding-right: 30px">-->
+                    <!--{$vo.details|strip_tags|htmlspecialchars|mb_substr=0,50}-->
+                <!--</div>-->
+                <!--<div>-->
+                    <!--<div><a style="font-size: 14px;font-weight: normal;" href="{:url('/'.$vo.nav.urls.'/'.$vo.id)}">了解详细</a></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="right">-->
+                <!--<div>{$vo.create_time|strtotime|date='d',###}</div>-->
+                <!--<div></div>-->
+                <!--<div style="font-family: MicrosoftYaHei-Bold;font-size: 18px;font-weight: bold;font-stretch: normal;line-height: 75px;letter-spacing: 2px;color: #333333;">{$vo.create_time|strtotime|date='Y-m',###}</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--{/volist}-->
+    </div>
+</div>
+<style>
+    .n-banner{height:700px;}
+    .n-banner img{height:700px;}
+    .new-text{background: #efbe1b;}
+    .news-text{
+        padding: 0 43px;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        height:500px;
+    }
+    .news-list-right{
+        text-align: left;
+    }
+    .news-list-right p{
+        font-family: MicrosoftYaHei;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 24px;
+        letter-spacing: 0px;
+        color: #ffffff;
+    }
+    .news-list-right p span{
+        font-family: MicrosoftYaHei;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 48px;
+        letter-spacing: 0px;
+        color: #ffffff;
+    }
+    .news-list-right p label{
+        font-family: MicrosoftYaHei;
+        font-size: 24px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 48px;
+        letter-spacing: 0px;
+        color: #ffffff;
+    }
+    .news-item a,.news-item:hover,.news-item a:focus{
+        color: #333;
+        text-decoration: none;
+    }
+</style>
+<script>
+    $('.news-item a').hover(function () {
+        $(this).stop().css({color:'red',});
+    },function () {
+        $(this).stop().css({color:'#333',});
+    })
+</script>
+{include file='public/footer'}

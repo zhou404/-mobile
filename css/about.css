@@ -1,0 +1,150 @@
+
+.abouts{
+    background-image: url("../images/abouts.jpg");
+    padding: 240px 0px;
+    margin: 0 auto;
+}
+.abouts .continue{
+}
+.abouts-title{
+    /*margin-top: 50px;*/
+}
+.abouts-title span{
+    background: #f0bf1b;
+    width: 100px;
+    height: 4px;
+    position: relative;
+    display: inline-block;
+    top: -45px;
+    z-index: 1;
+}
+.abouts-title h2{
+    font-family: MicrosoftYaHei;
+    font-size: 28px;
+    font-weight: bold;
+    font-stretch: normal;
+    line-height: 36px;
+    letter-spacing: 2px;
+    color: #333333;
+}
+.abouts-box{
+    /*margin-top: 50px;*/
+    padding: 50px 80px;
+    width: 100%;
+    background-color: #ffffff;
+    opacity: 0.87;
+}
+.abouts-box img {
+    max-width: 100%;
+}
+.abouts-box .abouts-img{
+    margin-top: 10px;
+    margin-right: 10px;
+
+}
+.abouts-box .abouts-img img{
+    height: 600px;
+    width: 100%;
+}
+.abouts-box .abouts-img-list {
+    margin: 10px 10px 35px;
+}
+
+.abouts-box .abouts-img-list img {
+    height: 210px;
+    width: 100%
+}
+
+.abouts-box .abouts-four {
+    margin: 10px;
+}
+
+.abouts-box .abouts-four img {
+    width: 100%;
+    height: 340px
+}
+
+.abouts-box .abouts-text {
+    padding: 10px;
+    text-align: left
+}
+
+.abouts-box .abouts-text p:first-child {
+    border-bottom: 2px solid #f8cd00;
+    font-family: MicrosoftYaHeiLight;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    line-height: 36px;
+    letter-spacing: 5px;
+    color: #000000;
+    display: inline-block;
+    padding: 0px 0 20px;
+}
+
+.abouts-box .abouts-text p:last-child {
+    font-family: MicrosoftYaHeiLight;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    line-height: 36px;
+    letter-spacing: 1px;
+    color: #757575;
+    padding-top: 10px;
+}
+
+
+.advantage{
+    margin-top: 50px;
+}
+/*.advantage-title{*/
+    /*background-image: ;*/
+    /*background-size: 100% 100%;*/
+/*}*/
+
+
+
+
+
+.certificate{
+    background-image: url("../images/certificate.jpg");
+    background-size: 100% 100%;
+}
+.certificate .continue{
+    padding: 50px 0;
+}
+.certificate .continue .certificate-title h2{
+    font-family: MicrosoftYaHei;
+    font-size: 28px;
+    font-weight: bold;
+    font-stretch: normal;
+    line-height: 36px;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+.certificate .continue .certificate-box{
+    margin-top: 50px;
+}
+.certificate .continue .vertical{
+     margin-top: 50px;
+ }
+.certificate-list{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+.certificate .certificate-s{
+    padding: 5px;
+    /*border: 1px solid #fff;*/
+    width:24%;
+    height:250px;
+    margin:10px 0;
+    box-sizing: border-box;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.certificate .certificate-s img{
+    max-width: 100%;
+    max-height:100%;
+}

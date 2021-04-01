@@ -1,0 +1,500 @@
+{include file='public/header'}
+{include file='public/banner'}
+<script src="__STATIC__/index/js/scroll.js"></script>
+<script src="__STATIC__/index/js/index.js"></script>
+
+<div class="left-all">
+    <ul>
+
+    </ul>
+</div>
+<!--about[start]-->
+<div class="about all">
+    <!--<div class="continue">-->
+    <div class="z-ms-5 l yellow">
+        <div class="about-text r">
+            <p>实现共生互生 再生的良性增长</p>
+            <p>共筑生态产业联盟</p>
+            <p>聚合全产业链资源</p>
+            <p>关于我们</p>
+        </div>
+    </div>
+    <div class="z-ms-7 l">
+
+    </div>
+    <!--</div>-->
+</div>
+<style>
+    .yellow p{line-height:40px;position:absolute;}
+    .yellow p:nth-child(1){left:0;bottom:-100vh;}
+    .yellow p:nth-child(2){left:90px;bottom:-100vh;}
+    .yellow p:nth-child(3){left:180px;bottom:-100vh;}
+    .yellow p:nth-child(4){left:270px;top:-100vh;}
+</style>
+<!--about[end]-->
+<!--product[start]-->
+<div class="product all">
+    <div class="continue" style="padding-top:120px;">
+        <div class="product-title">
+            产品中心
+        </div>
+        <div class="product-box">
+            {volist name ='product' id='vo' offset="0" length='4'}
+            <div onmouseenter="ru(this)" class="product-list"
+                 style="margin-bottom: 10px;background: url('{$vo.image.url}') no-repeat center center;height: 380px;width:260px;background-size: cover;">
+                <!--<img src="images/product-list.png" alt="">-->
+                <div class="product-texts" onmouseleave="chu(this)"><a href="{:url('/'.$vo.urls)}">
+                    <p>{$vo.title}</p>
+                    <p>{$vo.introduction}</p>
+                </a></div>
+            </div>
+            {/volist}
+        </div>
+        <div class="product-more" style="margin-top:20px">
+            <a href="{:url('/product')}"
+               style="display: inline-block;padding: 0px 22px;letter-spacing: 3px;font-weight: normal;">查看更多</a>
+        </div>
+    </div>
+</div>
+<style>
+    .product-more a {
+        font-family: MicrosoftYaHeiLight;
+        font-size: 16px;
+        font-weight: bold;
+        font-stretch: normal;
+        line-height: 28px;
+        letter-spacing: 1px;
+        color: #000000;
+        background-color: #ffffff;
+        border-radius: 6px;
+        border: none;
+        /*padding: ;*/
+    }
+
+    .product-texts {
+        position: absolute !important;
+        height: 40%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        top: 30%;
+        /*display: none;*/
+        padding: 20px 0;
+        line-height: 35px;
+    }
+
+    .product-texts a p{
+        color: #fff;
+        font-family: MicrosoftYaHei;
+        font-size: 32px;
+        font-weight: bold;
+        font-stretch: normal;
+        line-height: 36px;
+        letter-spacing: 2px;
+        color: #ffffff;
+    }
+
+    .product-texts a p:last-child {
+        font-family: MicrosoftYaHeiLight;
+        font-size: 18px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 36px;
+        letter-spacing: 3px;
+        margin-top: 28px;
+        /*color: #ffffff;*/
+    }
+
+    .product-texts a:hover {
+        color: #efbe1b;
+    }
+
+    .product-more a:hover {
+        color: #ffffff;
+        background: #efbe1b;
+    }
+    .product-list:hover .product-texts p{color:#efbe1b}
+</style>
+<script>
+    function ru(that) {
+        $(that).find('.product-texts').css({color: '#efbe1b'});
+    }
+
+    function chu(that) {
+        $(that).css({display: '#ffffff'});
+    }
+</script>
+<!--product[end]-->
+<!--horo[start]-->
+<div class="horo all">
+    <div class="continue" style="padding: 170px 0 0 0;">
+        <div class="horo-title">
+            <h2 style="font-family: MicrosoftYaHei;font-size: 36px;font-weight: bold;font-stretch: normal;line-height: 36px;letter-spacing: 3px;color: #ffffff;">
+                品牌介绍</h2>
+            <div style="font-family: MicrosoftYaHeiLight;font-size: 18px;font-weight: normal;font-stretch: normal;line-height: 36px;letter-spacing: 1px;color: #fefefe;opacity: 0.8;">
+                土门赵鸭子致力于成为中国佐餐熟食第一品牌，一直坚持源自1883年的传统卤制工艺与现代化生产相结合，打造健康安全、放心美味的优质熟食，同时依托集团全产业链自有自控供应优势，严格管控食品安全，有力的保障“道道安心，餐餐美味”的餐桌美食理念。
+            </div>
+        </div>
+        <div class="horo-box">
+            {volist name='horo' id='vo' key='key'}
+            <div class="horo-list">
+                <div class="horo-list-box">
+                    {switch name='$key'}
+                        {case value='1'}<img src="__STATIC__/index/images/mendian.png" alt="">{/case}
+                        {case value='2'}<img src="__STATIC__/index/images/dingwei.png" alt="">{/case}
+                        {case value='3'}<img src="__STATIC__/index/images/mubiao.png" alt="">{/case}
+                        {case value='4'}<img src="__STATIC__/index/images/linian.png" alt="">{/case}
+                        {case value='5'}<img src="__STATIC__/index/images/fangshi.png" alt="">{/case}
+                    {/switch}
+                    <p>{$vo.title}</p>
+                    <p>{$vo.title_f}</p>
+                </div>
+            </div>
+            {/volist}
+        </div>
+
+    </div>
+</div>
+<script>
+    $(function () {
+        $('.horo-list').css({cursor: 'pointer','border-radius' : '10px'});
+        $('.horo-list').find('.horo-list-box').find('p').css({color: '#fff'});
+        $('.horo-list').hover(function () {
+
+            console.log($(this).index())
+            if ($(this).index() == 0) {
+                $(this).find('img').attr('src', '/public/static/index/images/horo-list-1.png');
+            }
+            if ($(this).index() == 1) {
+                $(this).find('img').attr('src', '/public/static/index/images/horo-list-2.png');
+            }
+            if ($(this).index() == 2) {
+                $(this).find('img').attr('src', '/public/static/index/images/horo-list-3.png');
+            }
+            if ($(this).index() == 3) {
+                $(this).find('img').attr('src', '/public/static/index/images/horo-list-4.png');
+            }
+            if ($(this).index() == 4) {
+                $(this).find('img').attr('src', '/public/static/index/images/horo-list-5.png');
+            }
+            $(this).find('p').css({color: '#000'});
+        }, function () {
+            if ($(this).index() == 0) {
+                $(this).find('img').attr('src', '/public/static/index/images/mendian.png');
+            }
+            if ($(this).index() == 1) {
+                $(this).find('img').attr('src', '/public/static/index/images/dingwei.png');
+            }
+            if ($(this).index() == 2) {
+                $(this).find('img').attr('src', '/public/static/index/images/mubiao.png');
+            }
+            if ($(this).index() == 3) {
+                $(this).find('img').attr('src', '/public/static/index/images/linian.png');
+            }
+            if ($(this).index() == 4) {
+                $(this).find('img').attr('src', '/public/static/index/images/fangshi.png');
+            }
+            $(this).find('p').css({color: '#fff'});
+
+        })
+    })
+
+</script>
+<!--horo[end]-->
+<div class="men all" >
+
+</div>
+<!--commone[start]-->
+<div class="commone all" >
+    <div class="continue" style="padding: 170px 0 0 0">
+        <div class="commone-title">
+            <h2>加入我们</h2>
+        </div>
+        <div class="commone-box">
+            <form action="{:url('conment')}" method="post" id="conment">
+                <div class="commone-group">
+                    <!--<span>*姓名</span>-->
+                    <input type="text" name="user_name" placeholder="请输入您的姓名">
+                </div>
+                <div class="commone-group tc">
+                    <input type="radio" name="user_sex" value="0"> <label>先生</label>
+                    <input type="radio" name="user_sex" value="1"> <label>女士</label>
+                </div>
+                <div class="commone-group">
+                    <!--<span>*联系电话</span>-->
+                    <input type="text" name="user_phone" placeholder="请输入您的联系电话">
+                </div>
+                <!--<div class="commone-group">-->
+                <!--<span>*加盟城市</span>-->
+                <!--<select name="province" id="province">-->
+                <!--<option value="0">请选择省份</option>-->
+                <!--</select>-->
+                <!--<select name="city" id="city">-->
+                <!--<option value="0">请选择城市</option>-->
+                <!--</select>-->
+                <!--<select name="area" id="area" style="">-->
+                <!--<option value="0">请选择区</option>-->
+                <!--</select>-->
+                <!--</div>-->
+                <div class="commone-group">
+                    <button>立即加入</button>
+                </div>
+            </form>
+        </div>
+        <div class="footer-i">
+            <div class="footer-i-logo">
+                <img src="{$company.logo}" alt="" style="height: 80px;">
+            </div>
+            <div class="footer-i-phone">
+                加盟热线：400-0838-226
+            </div>
+            <div class="footer-i-address">
+                四川省绵阳市三台县花园镇工业集中发展区绿溪优食谷
+            </div>
+            <div class="footer-i-icon">
+                版权所有 © 绵阳枫叶牧场食品科技有限公司 蜀ICP备2021005350号
+            </div>
+        </div>
+    </div>
+    <script>
+        $('#conment').submit(function () {
+            var urls = $(this).attr('action')
+            console.log(urls);
+            var fd = new FormData($('#conment')[0]);
+            console.log(fd);
+            if($('input[name=user_name]').val() == ''){
+                alert('联系人不能为空');
+                return false;
+            }
+            if($('input[name=user_phone]').val() == ''){
+                alert('联系方式不能为空');
+                return false;
+            }
+            $.ajax({
+                url: urls,
+                type: "post",
+                data: fd,
+                processData: false,
+                contentType: false,
+                success: function (returnedData) {
+                    console.log(returnedData);
+                    if(returnedData.state){
+                        alert('您已成功留言。请耐心等待信息');
+                    }else{
+                        alert(returnedData.msg);
+                    }
+                },
+                error: function () {
+                    parent.layer.msg('网络错误，稍后再试');
+                }
+            });
+            return false;
+        })
+    </script>
+    <style>
+        .footer-i {
+            margin-top: 50px;
+        }
+
+        .footer-i .footer-i-address, .footer-i .footer-i-icon {
+            font-size: 14px;
+        }
+
+        .footer-i div {
+            margin: 15px 0;
+            position: relative;
+            color: #333;
+        }
+
+        .footer-i .footer-i-phone {
+            font-family: MicrosoftYaHei;
+            font-size: 18px;
+            font-weight: bold;
+            font-stretch: normal;
+            line-height: 36px;
+            letter-spacing: 1px;
+            color: #333333;
+        }
+
+        .commone .continue .commone-box .commone-group {
+            top: 0px;
+            width: 100%;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .commone .continue .commone-box .commone-group input, .commone .continue .commone-box .commone-group button {
+            width: 54%;
+        }
+
+        /*.commone-group span{*/
+        /*display: inline-block;*/
+        /*margin-right: 50px;*/
+        /*line-height: 50px;*/
+        /*}*/
+    </style>
+    <script>
+        // console.log($.parseJSON('{$cities}'));
+        // var provinces = $.parseJSON('{$provinces}');
+        // var citys = $.parseJSON('{$cities}');
+        // var areas = $.parseJSON('{$areas}');
+
+        //填充省列表
+        // for (var i = 0; i < provinces.length; i++) {
+        //     $("#province").append("<option value='" + provinces[i]['provinceid'] + "'>" + provinces[i]['province'] + "</option>")
+        // }
+
+        // //填充市列表
+        // for(var i=0;i<citys[$("#province option:selected").val()].length;i++){
+        //     $("#city").append("<option value='"+citys[$("#province option:selected").val()][i]['id']+"'>"+citys[$("#province option:selected").val()][i]['city']+"</option>")
+        // }
+        //
+        // //填充区列表
+        // for(var i=0;i<areas[$("#province option:selected").val()][$("#city option:selected").val()].length;i++){
+        //     $("#area").append("<option value='"+i+"'>"+areas[$("#province option:selected").val()][$("#city option:selected").val()][i]+"</option>")
+        // }
+
+
+        //省份选项被改动时
+        // $("#province").change(function () {
+        //     $("#city").empty();//清空市列表
+        //     $("#area").empty();
+        //     var that = $(this);
+        //     var citys_i = 0
+        //     //填充市列表
+        //     for (var i = 0; i < citys.length; i++) {
+        //         if (citys[i]['provinceid'] == that.val()) {
+        //             $("#city").append("<option value='" + citys[i]['cityid'] + "'>" + citys[i]['city'] + "</option>");
+        //             citys_i++;
+        //         }
+        //
+        //     }
+        //     //填充区列表
+        //     if (citys_i != 1) {
+        //         $("#area").append("<option value='0'>请选择</option>")
+        //     } else {
+        //         for (var i = 0; i < areas.length; i++) {
+        //
+        //             $("#area").append("<option value='" + areas[i]['areaid'] + "'>" + areas[i]['area'] + "</option>")
+        //         }
+        //
+        //     }
+        //
+        // })
+
+        //市选项被改动时
+        // $("#city").change(function () {
+        //     $("#area").empty();
+        //     var that = $(this);
+        //     for (var i = 0; i < areas.length; i++) {
+        //         if (areas[i]['cityid'] == that.val())
+        //             $("#area").append("<option value='" + areas[i]['areaid'] + "'>" + areas[i]['area'] + "</option>")
+        //     }
+        //
+        // })
+        // i = -1;
+        $(".main").stop().css({top:0});
+        var sp = scrollPage();
+        sp(6, function (page) {
+            console.log(page);
+
+            function two() {
+                $('.about-text').find('p').eq(1).stop().animate({bottom: "20%"}, 500)
+            }
+
+            function three() {
+                $('.about-text').find('p').eq(2).stop().animate({bottom: "30%"}, 500)
+            }
+
+            function four() {
+                $('.about-text').find('p').eq(3).stop().animate({top: "20%"}, 500)
+            }
+
+            //product
+            function box() {
+                $('.product-box').stop().animate({left: '100px'})
+            }
+
+            function box_two() {
+                $('.product-box').stop().animate({left: '0px'}, 500)
+            }
+
+            var st = setTimeout(function () {
+                $('.yellow').stop().animate({left: '-900px'}, 1000);
+                $('.about-text').find('p').stop().css({bottom: -900});
+                $('.about-text').find('p').eq(3).stop().css({bottom: 700});
+            }, 1000);
+            var st5;
+            if (page != 6) {
+                st5 = setTimeout(function () {
+                    $('.commone-group').stop().css({top: '-100px',opacity:0});
+                    $('.footer-i div').stop().css({top: '100px',opacity:0});
+                }, 1000);
+
+            }
+            var st3 = setTimeout(function () {
+                $(".product-box .product-list").stop().css({left: 100, opacity: 0});
+                // $('.product-box').css({left: '1000px'});
+            }, 1000);
+            var si4;
+            var st4 = setTimeout(function () {
+                // clearInterval(si4);
+                //  $('.horo-box .horo-list').stop().css({top: '-244px',opacity:0});
+            }, 1000);
+            if (page == 2) {
+                clearTimeout(st);
+                setTimeout(two, 500);
+                setTimeout(three, 700);
+                setTimeout(four, 900);
+                $('.yellow').stop().animate({left: '0'}, 1000);
+                $('.about-text').find('p').eq(0).stop().animate({bottom: "5%"}, 500);
+            }
+            if (page == 3) {
+                clearTimeout(st3);
+                $('.product-box').css({left: 0});
+                var index3 = 0;
+                var si3 = setInterval(function () {
+                    var dom = $(".product-box .product-list:eq(" + index3 + ")");
+                    dom.stop().animate({left: 0, opacity: 1}, 1500);
+                    index3++;
+                    if (index3 == $(".product-box .product-list").length) {
+                        clearInterval(si3);
+                    }
+                }, 500);
+
+                //$('.product-box').stop().animate({left: '0px'}, 1500);
+            }
+            if (page == 4) {
+
+                clearTimeout(st4);
+                var index4 = 0;
+                si4 = setInterval(function () {
+                    var len4 = $('.horo-box .horo-list').length;
+                    var dom4 = $('.horo-box .horo-list').eq(index4);
+                    dom4.stop().animate({top: 0, opacity: 1}, 1000);
+                    index4++;
+                    if (index4 == $('.horo-box').find('.horo-list').length) {
+                        clearInterval(si4);
+                    }
+                }, 500)
+                //$('.horo-box').find('.horo-list').stop().animate({left:'0'},1500);
+            }
+            if (page == 6) {
+                clearTimeout(st5);
+                setTimeout(function(){
+                    $('.commone-group').eq(0).stop().animate({top: '0',opacity:1}, 1000);
+                    $('.commone-group').eq(1).stop().animate({top: '0',opacity:1}, 800);
+                    $('.commone-group').eq(2).stop().animate({top: '0',opacity:1}, 600);
+                    $('.commone-group').eq(3).stop().animate({top: '0',opacity:1}, 400);
+                    $('.footer-i div').eq(0).stop().animate({top: '0',opacity:1}, 1000);
+                    $('.footer-i div').eq(1).stop().animate({top: '0',opacity:1}, 800);
+                    $('.footer-i div').eq(2).stop().animate({top: '0',opacity:1}, 600);
+                    $('.footer-i div').eq(3).stop().animate({top: '0',opacity:1}, 400);
+                },1200);
+
+            }
+        });
+    </script>
+</div>
+<!--commone[end]-->
+</body>
+</html>

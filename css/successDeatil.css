@@ -1,0 +1,69 @@
+.successDetail-cont {
+  width: 1180px;
+  margin: 0 auto;
+  text-align: left;
+  margin-top: 50px;
+}
+.successDetail-cont .detail-img {
+  margin-top: 28px;
+  margin-bottom: 298px;
+}
+.successDetail-cont .detail-img img {
+  width: 100%;
+  height: 500px;
+}
+.bot {
+  width: 100%;
+  height: 350px;
+  background: #F8CD00;
+  padding: 60px 0;
+}
+.bot .bot-cont {
+  width: 60%;
+  margin: 0 auto;
+}
+.bot .bot-cont-top {
+  display: flex;
+  justify-content: space-between;
+}
+.bot .bot-cont-top .left {
+  display: flex;
+  width: 260px;
+  justify-content: space-between;
+}
+.bot .bot-cont-top .left .product div,
+.bot .bot-cont-top .left .news div,
+.bot .bot-cont-top .left .about div {
+  margin-top: 5px;
+}
+.bot .bot-cont-top .left .product div:nth-child(1),
+.bot .bot-cont-top .left .news div:nth-child(1),
+.bot .bot-cont-top .left .about div:nth-child(1) {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+}
+.bot .bot-cont-top .right {
+  text-align: right;
+}
+.bot .bot-cont-top .right div {
+  margin-top: 19px;
+}
+.bot .bot-cont-top .logo {
+  width: 161px;
+  height: 147px;
+}
+.bot .bot-cont-top .ewm {
+  width: 70px;
+  height: 70px;
+}
+.bot .bot-cont-bottom {
+  margin-top: 20px;
+  border-top: 1px solid #333333;
+  padding-top: 20px;
+  text-align: center;
+}
+.bot .bot-cont-bottom div:nth-child(2) {
+  margin-top: 10px;
+}

@@ -1,0 +1,941 @@
+<!--<script src="__STATIC__/index/js/index.js"></script>-->
+<!--<link href="__STATIC__/index/css/brand.css" rel="stylesheet">-->
+<!--<link href="https://cdn.bootcdn.net/ajax/libs/Swiper/2.7.0/idangerous.swiper.min.css" rel="stylesheet">-->
+{include file='public/header'}
+{include file='public/banner'}
+<script src="__STATIC__/index/js/scroll.js"></script>
+<script src="__STATIC__/index/js/index.js"></script>
+<script src="__STATIC__/index/js/jquery.slider.js"></script>
+<link href="__STATIC__/index/css/brand.css" rel="stylesheet">
+<script src="__STATIC__/index/js/swiper.js"></script>
+<script src="__STATIC__/index/js/main.js"></script>
+<script src="__STATIC__/index/js/modernizr.js"></script>
+<script src="__STATIC__/index/js/jquery.slider.js"></script>
+<link rel="stylesheet" href="__STATIC__/index/css/swiper.css"/>
+<link rel="stylesheet" href="__STATIC__/index/css/aaa.css"/>
+<link rel="stylesheet" href="__STATIC__/index/css/style.css"/>
+<div class="nav-two">
+    <div class="nav-two-content">
+        <div>
+            <a href="javascript:toPage(1);">品牌介绍</a>
+        </div>
+        <div>
+            <a href="javascript:toPage(2);">竞争优势</a>
+        </div>
+        <div>
+            <a href="javascript:toPage(3);">开业现场</a>
+        </div>
+        <div>
+            <a href="javascript:toPage(4);">成功案例</a>
+        </div>
+    </div>
+
+</div>
+<style>
+    .main{
+        width:100vw;
+        position:relative;
+    }
+    body{
+
+        width:100vw;
+        height:auto;
+        overflow: scroll;
+    }
+    .nav-two{position:fixed;top:100px;display:flex;justify-content: center;z-index:10002;width:100%;background-color:#f2cb47;height:50px;line-height:50px;border-top:2px solid white;}
+    .nav-two .nav-two-content{width:519px;display:flex; justify-content: space-between;}
+    .nav-two .nav-two-content a{font-size:14px;color:#666;display:block;}
+    .nav-two .nav-two-content div:hover a{color:#000;}
+</style>
+<!--<div class="left-all">-->
+    <!--<ul>-->
+        <!--<li style="background: red"></li>-->
+        <!--<li></li>-->
+        <!--<li></li>-->
+        <!--<li></li>-->
+        <!--<li></li>-->
+        <!--<li></li>-->
+    <!--</ul>-->
+<!--</div>-->
+<script>
+    function toPage(p){
+        var t = 0;
+        if(p==1){
+            t = $(".horo-info").offset().top-150;
+        }else if(p==2){
+            t = $(".guidance").offset().top-150;
+        }else if(p==3){
+            t = $(".scene").offset().top-150;
+        }else if(p==4){
+            t = $(".case").offset().top-150;
+        }
+
+        $("body,html").stop().animate({scrollTop:t});
+    }
+</script>
+<style type="text/css">
+    #continue {
+        width: 80%;
+        height: 100%;
+    }
+</style>
+<div class="left-all">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<!--horo[start]-->
+<div class="horo-info all1">
+    <div class="continue" style="padding-bottom:40px;">
+        <div class="horo-list-title">
+            <h2>品牌介绍</h2>
+        </div>
+        <div class="horo-fengexian">
+            <div class="rect"></div>
+        </div>
+        <div class="='horo-list-text">
+            <div class="horo-list-text-list">
+
+                <div class="z-ms-6s ">
+                    <div class="horo-list-text-list-img">
+                        {volist name='$horo' id='vo' key='key'}
+                        <?php $iiii = 0;?>
+                        {if condition='$vo.is_top eq 1'}
+                            <?php if($iiii == 2){break;}?>
+                            <img src="{$vo.image.url}" alt="">
+                            <?php $iiii++;?>
+                        {/if}
+                        {/volist}
+                        <!--<img src="__STATIC__/index/images/pinpai.png" alt="">-->
+                    </div>
+
+                </div>
+                <div class="z-ms-6s ">
+                    <div class="horo-list-text-list-info">
+                        {volist name = '$horo' id='vo'}
+                        <div class="horo-list-text-list-item">
+                            <p class="horo-list-text-list-item-title">{$vo.title}</p>
+                            <div >{$vo.details}</div>
+                        </div>
+                        {/volist}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="horo-fengexian">
+            <div class="rect"></div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+       $(window).scroll(function(){
+           var page = 0;
+           var st = $(window).scrollTop();
+           var thist = $(".horo-info").offset().top-150-$(window).height();
+           var st2;
+           if(st>thist && st<thist+$(window).height()){
+               if(page!=2){
+                   page=2;
+                   clearTimeout(st2);
+                   $('.horo-list-text-list-img').stop().animate({left: '0',opacity:1},1500);
+                   $('.horo-list-text-list-info').stop().animate({right: '0',opacity:1},1500);
+               }
+
+           }else{
+               if(page!=0){
+                   page=0;
+                   st2 = setTimeout(function () {
+                       $('.horo-list-text-list-img').stop().css({left: '-300px',opacity:0});
+                       $('.horo-list-text-list-info').stop().css({right: '-300px',opacity:0});
+                   }, 1000)
+                   $('.horo-box').find('.horo-list').css({left: '-1500px'});
+               }
+
+           }
+
+
+           // if (page == 2) {
+           //     clearTimeout(st2);
+           //     $('.horo-list-text-list-img').stop().animate({left: '0',opacity:1},1500);
+           //     $('.horo-list-text-list-info').stop().animate({right: '0',opacity:1},1500);
+           // }
+       });
+
+    });
+</script>
+<style>
+    .horo-fengexian{display:flex;justify-content: space-between;}
+    .horo-fengexian:before,.horo-fengexian:after{content:"";display:block;height:10px;border-bottom:1px solid #666;box-sizing: border-box;width:570px;}
+    .horo-fengexian .rect{height:20px;width:20px;background-color:#f2ca47;}
+    .horo-info{
+        background: url("__STATIC__/index/images/pinpai-bg.jpg");
+    }
+    .horo-info .continue {
+        padding-top: 170px;
+    }
+    .horo-info .continue .horo-list-title{margin-bottom:20px;}
+    .horo-info .continue .horo-list-title h2{
+        font-family: MicrosoftYaHei;
+        font-size: 32px;
+        font-weight: bold;
+        font-stretch: normal;
+        line-height: 36px;
+        letter-spacing: 10px;
+        color: #000000;
+        padding-bottom: 10px;
+    }
+
+    .horo-info .continue .horo-list-text-list-img {
+        /*padding: 10px;*/
+        position: relative;
+        left: -300px;
+        opacity: 0;
+    }
+
+    .horo-info .continue .horo-list-text-list-img img {
+        width: 100%;
+        margin-bottom:10px;
+        /*margin: 10px;*/
+    }
+    .horo-info .continue .horo-list-text-list-info{
+        position: relative;
+        right: -300px;
+        opacity: 0;
+    }
+    .horo-info .continue .horo-list-text-list-info .horo-list-text-list-item{
+        text-align: left;
+        margin-bottom:10px;
+        /*padding: 10px;*/
+        /*margin: 10px;*/
+    }
+    .horo-info .continue .horo-list-text-list-info .horo-list-text-list-item div{
+        font-family: MicrosoftYaHei;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 36px;
+        letter-spacing: 1px;
+        color: #000000;
+        margin-bottom: 26px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+    .horo-info .continue .horo-list-text-list-info .horo-list-text-list-item .horo-list-text-list-item-title{
+        font-family: MicrosoftYaHei-Bold;
+        font-size: 18px;
+        font-weight: bold;
+        font-stretch: normal;
+        line-height: 36px;
+        letter-spacing: 1px;
+        color: #111111;
+        margin-bottom:20px;
+        text-overflow:ellipsis;
+        height:30px;
+        overflow:hidden;
+        white-space:nowrap;
+
+    }
+    .horo-list-text-list{display:flex;justify-content: space-between;padding-top:20px;padding-bottom:10px;}
+    .horo-list-text-list .z-ms-6s{width:48%;}
+</style>
+<script>
+    $(window).hover(function () {
+        // alert(1);
+    })
+
+</script>
+<!--horo[end]-->
+
+<!--guidance[start]-->
+<div class="guidance all">
+    <div class="continue" style="width: 1080px;padding: 170px 0 0 0">
+        <div class="guidance-title">
+            <h2>竞争优势</h2>
+        </div>
+        <div class="guidance-box">
+            <div class="guidance-icon">
+                {volist name='guidances' id='vo'}
+                <div class="guidance-icon-list">
+                    <img src="{$vo.image.url}" alt="">
+                    <div>{$vo.title}</div>
+                </div>
+                {/volist}
+            </div>
+            <div class="guidance-text">
+                {volist name='guidances' id='vo'}
+                    {if condition='$vo.is_top eq 1'}
+                        {$vo.details}
+                    <?php break;?>
+                    {/if}
+                {/volist}
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .guidance{
+        background: url("__STATIC__/index/images/youshi-bg.jpg") no-repeat center center;
+        position: relative;
+    }
+    .guidance-icon{
+        position:absolute;
+        display:flex;
+        justify-content: space-between;
+        width:1080px;
+        top: 42%;
+    }
+    .guidance-icon .guidance-icon-list{
+        width: calc(16.66% - 37.5px);
+        /*height: 160px;*/
+        background: #fff;
+        text-align: center;
+        border-radius: 50%;
+        font-family: MicrosoftYaHeiLight;
+        font-size: 16px;
+        font-stretch: normal;
+        line-height: 36px;
+        letter-spacing: 1px;
+        color: #000000;
+        padding: 15px 25px 25px;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition:.2s;
+        color:black;
+    }
+    .guidance-icon .guidance-icon-list img{
+        width: 50%;
+        display: block;
+        margin: 10% auto;
+    }
+    /*.guidance-icon .guidance-icon-list{*/
+        /*display: block;*/
+        /*float: left;*/
+    /*}*/
+    .guidance-box .guidance-text{
+        position: absolute;
+        top: 65%;
+        left: 0;
+        text-align: left;
+        margin:0 17.5%;
+        font-family: MicrosoftYaHei;
+        font-size: 14px;
+        font-weight: bold;
+        font-stretch: normal;
+        line-height: 48px;
+        letter-spacing: 1px;
+        color: #000000;
+    }
+    .guidance-text div {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        line-height: 30px;
+    }
+</style>
+
+<script>
+
+    $(function () {
+        $('.guidance-icon .guidance-icon-list').css({height:$('.guidance-icon .guidance-icon-list').outerWidth()});
+        $('.guidance-icon-list').hover(function () {
+            $(this).stop().css({background:'#efbe1b'});
+            if ($(this).index() == 0) {
+                $(this).find('img').attr('src', '/public/static/index/images/guidance1s.png');
+            }
+            if ($(this).index() == 1) {
+                $(this).find('img').attr('src', '/public/static/index/images/guidance2s.png');
+            }
+            if ($(this).index() == 2) {
+                $(this).find('img').attr('src', '/public/static/index/images/guidance3s.png');
+            }
+            if ($(this).index() == 3) {
+                $(this).find('img').attr('src', '/public/static/index/images/guidance4s.png');
+            }
+            if ($(this).index() == 4) {
+                $(this).find('img').attr('src', '/public/static/index/images/guidance5s.png');
+            }
+            if ($(this).index() == 5) {
+                $(this).find('img').attr('src', '/public/static/index/images/guidance6s.png');
+            }
+            $(this).css({color:"#fff"});
+        }, function () {
+            $(this).stop().css({background:'#ffffff',color:"#000"});
+            if ($(this).index() == 0) {
+                $(this).find('img').attr('src', '/public/static/index/images/guidance1.png');
+            }
+            if ($(this).index() == 1) {
+                $(this).find('img').attr('src', '/public/static/index/images/guidance2.png');
+            }
+            if ($(this).index() == 2) {
+                $(this).find('img').attr('src', '/public/static/index/images/guidance3.png');
+            }
+            if ($(this).index() == 3) {
+                $(this).find('img').attr('src', '/public/static/index/images/guidance4.png');
+            }
+            if ($(this).index() == 4) {
+                $(this).find('img').attr('src', '/public/static/index/images/guidance5.png');
+            }
+            if ($(this).index() == 5) {
+                $(this).find('img').attr('src', '/public/static/index/images/guidance6.png');
+            }
+
+        })
+    })
+</script>
+<script>
+    $('.pic li').hover(function () {
+        $(this).find('.guidance-text').css({'top': '-300px'});
+    }, function () {
+        $(this).find('.guidance-text').css({'top': '0px'});
+    })
+</script>
+<!--guidance[end]-->
+<!--scene[start]-->
+<div class="scene all1" style="height:auto;padding-bottom:40px;background-image:url('__STATIC__/index/images/openscenebg.jpg');background-size:cover;">
+    <div class="continue" style="padding: 170px 0 0 0">
+        <div class="scene-title" style="margin:15px auto;">
+            <h2>开业现场</h2>
+        </div>
+        <div class="scene-left"></div>
+        <div class="scene-list">
+            <div class="scene-wrap">
+                {volist name='$scene' id='vo'}
+                <div class="scene-one">
+                    <div class="scene-img" style="background-image:url('{$vo.image.url}')" ></div>
+                    <div class="scene-name">成都加盟店</div>
+                </div>
+                <div class="scene-one">
+                    <div class="scene-img" style="background-image:url('{$vo.image.url}')" ></div>
+                    <div class="scene-name">成都加盟店</div>
+                </div>
+                <div class="scene-one">
+                    <div class="scene-img" style="background-image:url('{$vo.image.url}')" ></div>
+                    <div class="scene-name">成都加盟店</div>
+                </div>
+                {/volist}
+            </div>
+        </div>
+        <div class="scene-right"></div>
+        <!--<div class="scene-one">-->
+
+            <!--<div class="scene-box">-->
+                <!--{volist name='$scene' id='vo'}-->
+                <!--<div class="z-ms-3 l">-->
+                    <!--<div class="scene-list">-->
+                        <!--<img src="{$vo.image.url}" alt="">-->
+                        <!--<div class="scene-list-close">-->
+                            <!--<a href="javascript:;">成都加盟店</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--{/volist}-->
+                <!--<div class="clear"></div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="scene-two">-->
+            <!--<div class="swiper-box">-->
+                <!--<div class="view">-->
+                    <!--<a class="arrow-left" href="javascript:void(0);">-->
+                        <!--<span></span>-->
+                    <!--</a>-->
+                    <!--<a class="arrow-right" href="javascript:void(0);">-->
+                        <!--<span></span>-->
+                    <!--</a>-->
+                    <!--<div class="swiper-container">-->
+                        <!--<span class="pic_page"></span>-->
+                        <!--<div class="swiper-wrapper">-->
+                            <!--{volist name='$scene' id='vo'}-->
+                            <!--<div class="swiper-slide">-->
+                                <!--<img src="{$vo.image.url}" alt="">-->
+                            <!--</div>-->
+                            <!--{/volist}-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="preview">-->
+                    <!--<a class="arrow-left" href="javascript:void(0);">-->
+                        <!--<span></span>-->
+                    <!--</a>-->
+                    <!--<a class="arrow-right" href="javascript:void(0);">-->
+                        <!--<span></span>-->
+                    <!--</a>-->
+                    <!--<div class="swiper-container">-->
+                        <!--<div class="swiper-wrapper swiper-tab">-->
+
+                            <!--{volist name='$scene' id='vo'}-->
+                            <!--<div class="swiper-slide">-->
+                                <!--<img src="{$vo.image.url}" alt="" style="max-height: 345px;">-->
+                            <!--</div>-->
+                            <!--{/volist}-->
+                        <!--</div>-->
+
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<a href="javascript:;" id="close">关闭</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+
+</div>
+<style>
+    .scene-list{width:1180px;overflow:hidden;height:616px;}
+    .scene-wrap{position:relative;}
+    .scene-one{width:380px;margin-right:20px;position:relative;height:280px;border-radius: 5px;border: solid 2px #f2ca47;float:left;position:relative;}
+    .scene-one:nth-child(3n+3){margin-right:0;}
+    .scene-one:nth-child(6n+4),.scene-one:nth-child(6n+5),.scene-one:nth-child(6n+6){
+        position:relative;margin-top:316px;
+    }
+    .scene-one:nth-child(6n+4){margin-left:-1180px;}
+    .scene-one:nth-child(6n+5){margin-left:-780px;}
+    .scene-one:nth-child(6n+6){margin-left:-380px;}
+    .scene-one .scene-img{width:100%;height:100%;background-size:cover;border-radius:5px;}
+    .scene-one .scene-name{position:absolute;width:250px;height:40px;line-height:40px;left:65px;bottom:-20px;background-color:#f2ca47;color:white;}
+    .scene-left{position:absolute;left:100px;top:58%;height:50px;width:50px;background-image:url('__STATIC__/index/images/historyleft.png');background-size:100% 100%;cursor:pointer;}
+    .scene-right{position:absolute;right:100px;top:58%;height:50px;width:50px;background-image:url('__STATIC__/index/images/historyright.png');background-size:100% 100%;cursor:pointer;}
+    .scene-left:hover{background-image:url("__STATIC__/index/images/historyleftrightck.png");transform: rotate(180deg);}
+    .scene-right:hover{background-image:url("__STATIC__/index/images/historyleftrightck.png");}
+    /*#close {*/
+        /*position: absolute;*/
+        /*bottom: 100px;*/
+        /*top: auto;*/
+    /*}*/
+    /*.scene-list{*/
+        /*border: solid 2px #f2ca47;*/
+        /*position: relative;*/
+        /*margin: 10px 10px 38px!important;*/
+    /*}*/
+    /*.scene-list-close{*/
+        /*position: absolute;*/
+        /*width: 100%;*/
+        /*left: 0;*/
+        /*bottom: -18px;*/
+        /*text-align: center;*/
+    /*}*/
+    /*.scene-list-close a{*/
+        /*display: inline-block;*/
+        /*padding: 0 32px;*/
+        /*background: #f2ca47;*/
+        /*font-family: MicrosoftYaHei;*/
+        /*font-size: 16px;*/
+        /*font-weight: bold;*/
+        /*font-stretch: normal;*/
+        /*line-height: 36px;*/
+        /*letter-spacing: 1px;*/
+        /*color: #ffffff;*/
+    /*}*/
+    /*.swiper-container, .swiper-container .swiper-wrapper {*/
+        /*overflow: hidden*/
+    /*}*/
+
+    /*.swiper-container .swiper-wrapper .swiper-slide {*/
+        /*float: left*/
+    /*}*/
+
+    /*.swiper-container .swiper-wrapper .swiper-slide img {*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+    /*}*/
+</style>
+<script>
+    $(function(){
+        var scenelen = $(".scene-one").length;
+        var scenepage = Math.ceil(scenelen/6);
+        $(".scene-wrap").width(scenepage*1180);
+        var scenep = 0;
+        $(".scene-left").click(function(){
+           scenep--;
+           if(scenep<0){
+               scenep=0;
+           }
+           sceneGo();
+        });
+        $(".scene-right").click(function(){
+            scenep++;
+            if(scenep>scenepage-1){
+                scenep=scenepage-1;
+            }
+            sceneGo();
+        });
+        function sceneGo(){
+            $(".scene-wrap").stop().animate({left:0-(scenep*1180)},800);
+        }
+        $(".case-list").hover(function(){
+           $(".case-list-text img:eq(0)",$(this)).attr("src","/public/static/index/images/yinhaoy.png");
+            $(".case-list-text img:eq(1)",$(this)).attr("src","/public/static/index/images/yinhaoy1.png").css({marginLeft:1});
+        },function(){
+            $(".case-list-text img:eq(0)",$(this)).attr("src","/public/static/index/images/left-up.png");
+            $(".case-list-text img:eq(1)",$(this)).attr("src","/public/static/index/images/right-down.png").css({marginLeft:0});
+        });
+    });
+</script>
+<!--scene[end]-->
+<!--case[end]-->
+<div class="case">
+    <div class="continue" style="padding: 170px 0 0 ">
+        <div class="case-title" style="margin: 0;">
+            <h2>成功案例</h2>
+        </div>
+        <div class="case-box">
+            <div class="case-list">
+                <div class="case-list-img">
+                    <img src="__STATIC__/index/images/case-list.png" alt="">
+                </div>
+                <div class="case-list-text">
+                    <img src="__STATIC__/index/images/left-up.png" alt="">
+                    <p>王老板加盟店</p>
+                    <p>
+                        合作商王老板两年前还是一家机械厂的职工，工厂效益也不好，王老板觉得这样的生活没有盼头，决定出来自己干点事，了解加盟土
+                        门赵鸭子，当时王老板所有的开店钱都是找亲戚朋友借的，开店3个月便把外债还清了，并开了第2家店，现在王老板每天快乐的奔波
+                        在两店之间，前不久还换了新车，如今还换了新车，如今小日子充实而有滋味。
+                    </p>
+                    <img src="__STATIC__/index/images/right-down.png" alt="" style="float: right">
+                </div>
+            </div>
+            <div class="case-list">
+                <div class="case-list-text">
+                    <img src="__STATIC__/index/images/left-up.png" alt="">
+                    <p>王老板加盟店</p>
+                    <p>
+                        合作商王老板两年前还是一家机械厂的职工，工厂效益也不好，王老板觉得这样的生活没有盼头，决定出来自己干点事，了解加盟土
+                        门赵鸭子，当时王老板所有的开店钱都是找亲戚朋友借的，开店3个月便把外债还清了，并开了第2家店，现在王老板每天快乐的奔波
+                        在两店之间，前不久还换了新车，如今还换了新车，如今小日子充实而有滋味。
+                    </p>
+                    <img src="__STATIC__/index/images/right-down.png" alt="" style="float: right">
+                </div>
+                <div class="case-list-img">
+                    <img src="__STATIC__/index/images/case-list.png" alt="">
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<style>
+    .case{background: #323231}
+    .case .case-title h2{
+        font-family: MicrosoftYaHei;
+        font-size: 32px;
+        font-weight: bold;
+        font-stretch: normal;
+        line-height: 36px;
+        letter-spacing: 2px;
+        color: #ffffff;
+    }
+    .case .case-box .case-list{
+        border-bottom: 1px solid #fff;
+        padding: 20px 0;
+        float: left;
+        text-align: left;
+        padding: 20px 0 30px;
+    }
+    .case .case-box .case-list:nth-child(2){border-bottom:0;}
+    .case .case-box .case-list-img{
+        float: left;
+        width: 20%;
+    }
+    .case .case-box .case-list-img img{
+        width: 100%;
+        border-radius: 50%;
+    }
+    .case .case-box .case-list .case-list-text{
+        float: right;
+        margin: 0 10px;
+        width: 75%;
+    }
+    .case .case-box .case-list .case-list-text p{
+        font-family: MicrosoftYaHei;
+        font-size: 14px;
+        font-weight: bold;
+        font-stretch: normal;
+        line-height: 36px;
+        letter-spacing: 1px;
+        color: #ffffff;
+        padding: 0 50px;
+    }
+    .case .case-box .case-list .case-list-text p:first-child{
+        font-family: MicrosoftYaHei;
+        font-family: MicrosoftYaHei-Bold;
+        font-size: 18px;
+        font-weight: bold;
+        font-stretch: normal;
+        line-height: 36px;
+        letter-spacing: 1px;
+        color: #ffffff;
+    }
+
+</style>
+<!--<div class="case">-->
+    <!--<div class="continue" style="padding: 50px 0;">-->
+        <!--<div class="case-title">-->
+            <!--<h2>成功案例</h2>-->
+        <!--</div>-->
+        <!--<div class="certificate-box" style="margin-top: 20px;">-->
+            <!--<div class="certificate-wrap">-->
+                <!--<div class="certificate-list">-->
+                    <!--<div class="vertical" style="margin-top: 50px;display:flex;justify-content: space-between">-->
+                        <!--{volist name='case' id='vo' offset="0" length='2'}-->
+                        <!--<div style="width:48%;position:relative;" class="certificate-list-one"-->
+                             <!--data-link="{:url('/caseinfo/'.$vo.id)}">-->
+                            <!--<div class="bg"-->
+                                 <!--style="width:100%;height:400px;background-color:black;position:absolute;opacity: 0;z-index:2;"></div>-->
+                            <!--<div class="imgpan" style="width:100%;height:400px;overflow:hidden;">-->
+                                <!--<img src="{$vo.image.url}" alt="" style="width:100%;height:400px;">-->
+                            <!--</div>-->
+                            <!--<div class="tit" style="margin:10px auto;text-align: center;height:2em;line-height:2em;">-->
+                                <!--{$vo.title}-->
+                            <!--</div>-->
+                            <!--<div class="showmore"-->
+                                 <!--style="display:none;width:6em;height:2em;line-height:2em;text-align:center;border:1px solid #666;color:#333;margin:10px auto;box-sizing:border-box;">-->
+                                <!--查看详情>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--{/volist}-->
+                        <!--&lt;!&ndash;<div style="width:48%;position:relative;" class="certificate-list-one">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="bg" style="width:100%;height:400px;background-color:black;position:absolute;opacity: 0;z-index:2;"></div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="imgpan" style="width:100%;height:400px;overflow:hidden;">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<img src="__STATIC__/index/images/1.jpg" alt="" style="width:100%;height:400px;">&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="tit" style="margin:10px auto;text-align: center;height:2em;line-height:2em;">sdfsdf</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="showmore" style="display:none;width:6em;height:2em;line-height:2em;text-align:center;border:1px solid #666;color:#333;margin:10px auto;box-sizing:border-box;">查看详情></div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="certificate-list">-->
+                    <!--<div class="vertical" style="margin-top: 50px;display:flex;justify-content: space-between">-->
+                        <!--{volist name='case' id='vo' offset="2" length='4'}-->
+                        <!--<div style="width:48%;position:relative;" class="certificate-list-one"-->
+                             <!--data-link="{:url('/caseinfo/'.$vo.id)}">-->
+                            <!--<div class="bg"-->
+                                 <!--style="width:100%;height:400px;background-color:black;position:absolute;opacity: 0;z-index:2;"></div>-->
+                            <!--<div class="imgpan" style="width:100%;height:400px;overflow:hidden;">-->
+                                <!--<img src="{$vo.image.url}" alt="" style="width:100%;height:400px;">-->
+                            <!--</div>-->
+                            <!--<div class="tit" style="margin:10px auto;text-align: center;height:2em;line-height:2em;">-->
+                                <!--{$vo.title}-->
+                            <!--</div>-->
+                            <!--<div class="showmore"-->
+                                 <!--style="display:none;width:6em;height:2em;line-height:2em;text-align:center;border:1px solid #666;color:#333;margin:10px auto;box-sizing:border-box;">-->
+                                <!--查看详情>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--{/volist}-->
+                        <!--&lt;!&ndash;<div style="width:48%;position:relative;" class="certificate-list-one">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="bg" style="width:100%;height:400px;background-color:black;position:absolute;opacity: 0;z-index:2;"></div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="imgpan" style="width:100%;height:400px;overflow:hidden;">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<img src="__STATIC__/index/images/1.jpg" alt="" style="width:100%;height:400px;">&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="tit" style="margin:10px auto;text-align: center;height:2em;line-height:2em;">sdfsdf</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="showmore" style="display:none;width:6em;height:2em;line-height:2em;text-align:center;border:1px solid #666;color:#333;margin:10px auto;box-sizing:border-box;">查看详情></div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="certificate-arc" style="display:flex;justify-content: center">-->
+
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<style>
+
+    .cd-slider-navigation {
+        top: 470px;
+    }
+
+    .cd-slider-navigation, .cd-slider-navigation li, .cd-slider-navigation a {
+        background-color: #ccc !important;
+    }
+
+    .pic_page {
+        display: none;
+    }
+
+    .preview {
+        display: none;
+    }
+</style>
+<!--case[end]-->
+{include file='public/footer'}
+<!--<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>-->
+<script src="https://cdn.bootcdn.net/ajax/libs/Swiper/2.7.0/idangerous.swiper.min.js"></script>
+<script>
+    $(function () {
+        $(".certificate-list-one").css({cursor: "pointer"}).hover(function () {
+            $(".tit", $(this)).hide();
+            $(".showmore", $(this)).css({cursor: "pointer"}).show();
+            $("img", $(this)).stop().animate({width: "110%", height: "450px", marginLeft: "-5%", marginTop: "-6.25%"});
+            $(".bg", $(this)).stop().animate({opacity: 0.3});
+        }, function () {
+            $(".tit", $(this)).show();
+            $(".showmore", $(this)).hide();
+            $("img", $(this)).stop().animate({width: "100%", height: "400px", marginLeft: "0%", marginTop: "0"});
+            $(".bg", $(this)).stop().animate({opacity: 0});
+        }).click(function () {
+            var url = $(this).data('link');
+            location.href = url;
+
+        })
+    });
+
+    var certificateLength = $(".certificate-list").length;
+    $(".certificate-list").css({"overflow": "hidden", width: "100%"});
+    $(".certificate-box").css({"overflow": "hidden", "position": "relative"});
+    $(".certificate-wrap").css({"display": "flex", width: certificateLength + "00%", "position": "relative"});
+    for (var k = 0; k < certificateLength; k++) {
+        var arc = $("<div/>").css({
+            width: 10,
+            height: 10,
+            "border-radius": "50%",
+            "background-color": "#ccc",
+            "margin": "0 10px 0",
+            "cursor": "pointer"
+        });
+        if (k == 0) {
+            arc.addClass("active").css({"background-color": "red"});
+        }
+        arc.attr("onclick", "cerclick(this)");
+        // arc.click(function(){
+        //     if(!$(this).hasClass("active")){
+        //         $(this).siblings().removeClass("active").css({"background-color":"white"});
+        //         $(this).addClass("active").css({"background-color":"red"});
+        //         var cerindex1 = $(this).index();
+        //         $(".certificate-wrap").stop().animate({left:0-$(".certificate-box").width()*cerindex1})
+        //     }
+        // });
+
+        $(".certificate-arc").append(arc);
+
+    }
+
+    function cerclick(that) {
+        if (!$(that).hasClass("active")) {
+            $(that).siblings().removeClass("active").css({"background-color": "#ccc"});
+            $(that).addClass("active").css({"background-color": "red"});
+            var cerindex1 = $(that).index();
+            $(".certificate-wrap").stop().animate({left: 0 - $(".certificate-box").width() * cerindex1})
+        }
+    }
+
+    $(".main").stop().css({top:0});
+    // var sp = scrollPage();
+    // sp(6, function (page) {
+    //     // var st2 = setTimeout(function () {
+    //     //
+    //     //     $('.horo-box').find('.horo-list').stop().css({left: '-1500px'});
+    //     // }, 1000);
+    //     // $('.horo-box').find('.horo-list').css({left: '-1500px'});
+    //     // if (page == 2) {
+    //     //     clearTimeout(st4);
+    //     //     var index4 = 0;
+    //     //     var si4 = setInterval(function () {
+    //     //         var len4 = $('.horo-box').find('.horo-list').length;
+    //     //         var dom4 = $('.horo-box').find('.horo-list').eq(len4 - index4 - 1);
+    //     //         dom4.stop().animate({left: 0}, 1500);
+    //     //         index4++;
+    //     //         if (index4 == $('.horo-box').find('.horo-list').length) {
+    //     //             clearInterval(si4);
+    //     //         }
+    //     //     }, 500)
+    //     // }
+    //
+    //
+    //
+    //
+    //     var st2 = setTimeout(function () {
+    //
+    //         $('.horo-list-text-list-img').stop().css({left: '-300px',opacity:0});
+    //         $('.horo-list-text-list-info').stop().css({right: '-300px',opacity:0});
+    //     }, 1000);
+    //     $('.horo-box').find('.horo-list').css({left: '-1500px'});
+    //     if (page == 2) {
+    //         clearTimeout(st2);
+    //         $('.horo-list-text-list-img').stop().animate({left: '0',opacity:1},1500);
+    //         $('.horo-list-text-list-info').stop().animate({right: '0',opacity:1},1500);
+    //     }
+    //
+    // });
+    // swiper start
+    // 首次进入第一个小图高亮
+    $(".preview .swiper-wrapper .swiper-slide").eq(0).addClass('active-nav');
+    // 大轮播图
+    var viewSwiper = new Swiper('.view .swiper-container', {
+        // autoplay: 5000,
+        preventLinksPropagation: true,
+        autoplayDisableOnInteraction: false,
+        onSlideChangeStart: function () {
+            updateNavPosition()
+        }
+    })
+    // 右下角数字展示
+    // $('.pic_page').html(Number(viewSwiper.activeIndex + 1) + '/' + Number(viewSwiper.slides.length))
+    // 点击左箭头
+    $('.view .arrow-left,.preview .arrow-left').on('click', function (e) {
+        e.preventDefault()
+        if (viewSwiper.activeIndex == 0) {
+            // console.log(viewSwiper.slides.length)
+            viewSwiper.swipeTo(viewSwiper.slides.length - 1, 1000);
+            return
+        }
+        viewSwiper.swipePrev()
+    })
+    // 点击右箭头
+    $('.view .arrow-right,.preview .arrow-right').on('click', function (e) {
+        e.preventDefault()
+        if (viewSwiper.activeIndex == viewSwiper.slides.length - 1) {
+            viewSwiper.swipeTo(0, 1000);
+            return
+        }
+        viewSwiper.swipeNext()
+    })
+    // 小轮播图
+    var previewSwiper = new Swiper('.preview .swiper-container', {
+        visibilityFullFit: true,
+        slidesPerView: 'auto',
+        onlyExternal: true,
+        onSlideClick: function () {
+            viewSwiper.swipeTo(previewSwiper.clickedSlideIndex)
+        }
+    })
+
+    // 改变：小轮播图高亮、移动、右下角数字展示
+    function updateNavPosition() {
+        $('.preview .active-nav').removeClass('active-nav')
+        var activeNav = $('.preview .swiper-slide').eq(viewSwiper.activeIndex).addClass('active-nav')
+        if (!activeNav.hasClass('swiper-slide-visible')) {
+            if (activeNav.index() > previewSwiper.activeIndex) {
+                var thumbsPerNav = Math.floor(previewSwiper.width / activeNav.width()) - 1
+                previewSwiper.swipeTo(activeNav.index() - thumbsPerNav)
+            } else {
+                previewSwiper.swipeTo(activeNav.index())
+            }
+        }
+
+        $('.pic_page').html(Number(viewSwiper.activeIndex + 1) + '/' + Number(viewSwiper.slides.length))
+    }
+
+    // $('.scene-two').hide();
+    $('.scene-one').find('img').click(function () {
+        console.log(1);
+        $('.scene-one').hide();
+        $('.scene-two').css({opacity: 1});
+    })
+    $('#close').click(function () {
+        $('.scene-one').show();
+        $('.scene-two').css({opacity: 0, top: '-450px'});
+    })
+    // swiper end
+</script>
+</body>
+</html>

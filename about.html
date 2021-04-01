@@ -1,0 +1,450 @@
+{include file='public/header'}
+{include file='public/banner'}
+<script src="__STATIC__/index/js/scroll.js"></script>
+<script src="__STATIC__/index/js/index.js"></script>
+<script src="__STATIC__/index/js/ctx.js"></script>
+<script src="__STATIC__/index/js/jquery.slider.js"></script>
+<link href="__STATIC__/index/css/about.css" rel="stylesheet">
+<div class="nav-two">
+    <div class="nav-two-content">
+        <div>
+            <a href="javascript:toPage(1);">{$about.title}</a>
+        </div>
+        <div>
+            <a href="javascript:toPage(2);">发展历程</a>
+        </div>
+        <div>
+            <a href="javascript:toPage(3);">荣誉证书</a>
+        </div>
+    </div>
+
+</div>
+<style>
+    .nav-two{position:fixed;top:100px;display:flex;justify-content: center;z-index:6;width:100%;background-color:#f2cb47;height:50px;line-height:50px;border-top:2px solid white;}
+    .nav-two .nav-two-content{width:364px;display:flex; justify-content: space-between;}
+    .nav-two .nav-two-content a{font-size:14px;color:#666;display:block;}
+    .nav-two .nav-two-content div:hover a{color:#000;}
+</style>
+<div class="left-all">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script>
+    function toPage(p){
+        $(".left-all li:eq("+p+")").trigger("click");
+    }
+</script>
+<!--about[start]-->
+<div class="abouts all" style="background-size: 100% 100%;">
+    <div class="continue">
+
+        <div class="abouts-box">
+            <div class="abouts-title">
+                <h2>{$about.title}</h2>
+            </div>
+            <div class="abouts-text">
+                {$about.details}
+            </div>
+        </div>
+        <div class="abouts-box1">
+            <div class="abouts-title1">
+                <h2>{$about.title}</h2>
+            </div>
+            <div class="abouts-text1">
+                {$about.details}
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .abouts{padding-top:150px;height:calc(100vh - 150px);}
+    .abouts-box .abouts-text p:first-child {
+        border: none;
+    }
+</style>
+<style>
+    .abouts-box {
+        position: relative;
+        top: 900px;
+        opacity: 0;
+    }
+    .abouts-box .abouts-title h2{opacity:0;}
+    .abouts-box .abouts-text {
+        opacity:0;
+        font-family: MicrosoftYaHei;
+        font-size: 18px;
+        font-weight: bold;
+        font-stretch: normal;
+        line-height: 48px;
+        letter-spacing: 1px;
+        color: #707070;
+    }
+    .abouts-box1{width:1180px;margin-top:900px;opacity:0;padding:50px 80px;position:relative;top:50px;}
+    .abouts-box1 .abouts-title1 h2{
+        font-family: MicrosoftYaHei;
+        font-size: 28px;
+        font-weight: bold;
+        font-stretch: normal;
+        line-height: 36px;
+        letter-spacing: 2px;
+        color: #333333;}
+    .abouts-box1 .abouts-text1 {
+        font-family: MicrosoftYaHei;
+        font-size: 18px;
+        font-weight: bold;
+        font-stretch: normal;
+        line-height: 48px;
+        letter-spacing: 1px;
+        color: #707070;
+    }
+    .certificate-title h2{color:#333;}
+</style>
+<div class="clear"></div>
+<!--about[end]-->
+<script>
+    $('.abouts-box').hover(function () {
+        $(this).find('.abouts-text').css({color: '#ff5824'})
+        $(this).find('h2').css({color: '#ff5824'})
+    }, function () {
+        $(this).find('.abouts-text').css({color: '#666'})
+        $(this).find('h2').css({color: '#333'})
+    })
+</script>
+<!--honor[start]-->
+<!--<canvas id="quxian" style="position:absolute;z-index:998;"></canvas>-->
+<!--<div class="honor all" style="background-image: url('__STATIC__/index/images/horo-bg.jpg');background-size: 100% 100%;">-->
+<div class="history">
+    <div class="history-title">
+        发展历程
+    </div>
+    <div class="history-box">
+        <div class="history-content">
+
+            <div class="history-cross">
+                <div class="history-left"></div>
+                <div class="history-line"></div>
+                <div class="history-right"></div>
+            </div>
+            <div class="history-datas">
+                <div class="history-wrap">
+                    {volist name='lichen' id='vo'}
+                    <div class="history-one">
+                        <div class="history-icon"></div>
+                        <div class="history-one-main">
+                            <div class="history-year">{$vo.year}年</div>
+                            <div class="history-info">
+                                {volist name='vo.item' id='vo1'}
+                                <p>{$vo1.title}</p>
+                                {/volist}
+                            </div>
+                        </div>
+                    </div>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<style>
+    .history{
+        width:100vw;
+        height:100vh;
+        background:url('__STATIC__/index/images/historybg.jpg') #f5f5f5 no-repeat 100% 100%;
+    }
+    .history-title{text-align:center;font-size: 32px;
+        font-weight: bold;
+        font-stretch: normal;
+        line-height: 48px;
+        letter-spacing: 2px;
+        color: #333333;padding-top:180px;}
+    .history-box{width:1180px;margin:50px auto;}
+    .history-content{display:flex;flex-direction: column;}
+    .history-cross{display:flex;position:absolute;margin-top:125px;width:1180px;}
+    .history-cross .history-left{display:block;content:"";height:50px;width:50px;background-image:url('__STATIC__/index/images/historyleft.png');background-size:100% 100%;cursor:pointer;}
+    .history-cross .history-left:hover{background-image:url("__STATIC__/index/images/historyleftrightck.png");transform: rotate(180deg);}
+    .history-cross .history-right:hover{background-image:url("__STATIC__/index/images/historyleftrightck.png");}
+    .history-cross .history-right{display:block;content:"";height:50px;width:50px;background-image:url('__STATIC__/index/images/historyright.png');background-size:100% 100%;cursor:pointer}
+    .history-line{height:25px;box-sizing: border-box;border-bottom:1px solid #999;flex:1;}
+    .history-datas{overflow:hidden;width:1080px;margin-left:50px;}
+    .history-wrap{position: relative;}
+    .history-wrap:after{content:"";display:block;clear:both;}
+    .history-one{width:360px;height:200px;position:relative;float:left;box-sizing: border-box;display:flex;}
+    .history-one:nth-child(2n){margin-top:150px;padding-left:100px;margin-left:-360px;}
+    .history-one:nth-child(2n+1){padding-right:70px;padding-left:30px;}
+    .history-one .history-one-main{flex:1;}
+    .history-one .history-icon{background-size:100% 100%;width:24.59px;height:150px;}
+    .history-one:nth-child(2n+1) .history-icon{background-image:url('__STATIC__/index/images/historytopunck.png');margin-top:11px;}
+    .history-one:nth-child(2n) .history-icon{background-image:url('__STATIC__/index/images/historybottomunck.png');margin-top:-13px;}
+    .history-one:nth-child(2n) .history-one-main{margin-top:20px;}
+    .history-one:nth-child(2n):hover .history-icon{background-image:url('__STATIC__/index/images/historybottomck.png');}
+    .history-one:nth-child(2n+1):hover .history-icon{background-image:url('__STATIC__/index/images/historytopck.png');}
+    .history-one .history-one-main{margin-left:10px;}
+    .history-year{font-size: 28px;font-weight: bold;font-stretch: normal;line-height: 30px;letter-spacing: 1px;color: #333;margin-bottom:16px;transition: .3s;}
+    .history-one:hover .history-year{color:#efbe1b}
+    .history-info p{font-size:14px;font-weight:normal;}
+</style>
+<script>
+    $(function(){
+        var historylen = $(".history-datas .history-one").length;
+        var allwidth = Math.ceil(historylen/2)*360;
+        $(".history-wrap").width(allwidth);
+        var historyp = 0;
+        var historypc = Math.ceil(historylen/6);
+        console.log(historypc);
+        $(".history-left").click(function(){
+           historyp--;
+            if(historyp<0){
+                historyp=0;
+            }
+            historygo();
+        });
+        $(".history-right").click(function(){
+            historyp++;
+            if(historyp>historypc-1){
+                historyp=historypc-1;
+            }
+            historygo();
+        });
+        function historygo(){
+            $(".history-wrap").stop().animate({left:0-(historyp*1080)},800);
+        }
+    });
+</script>
+
+<!--honor[end]-->
+<!--certificate[start]-->
+<div class="certificate all">
+    <div class="continue" style="padding: 125px 0 0">
+        <!-- <div class="certificate-title">
+            <h2 style="color:#333;">荣誉证书</h2>
+        </div> -->
+        <div class="certificate-box" style="margin-top: 0px;">
+            <div class="certificate-wrap">
+                {volist name='certificate' id='vo'}
+                <div class="certificate-list" style="width: 21%;">
+                    {volist name='vo' id='vo1'}
+                    <div class="certificate-s">
+                        <img src="{$vo1.image.url}" alt="{$vo1.title}">
+                    </div>
+                    {/volist}
+                </div>
+                {/volist}
+                <!--<div class="certificate-list">-->
+                <!--<div class="certificate-s">-->
+                <!--<img src="__STATIC__/index/images/certificate-s.png" alt="">-->
+                <!--</div>-->
+                <!--<div class="certificate-s">-->
+                <!--<img src="__STATIC__/index/images/certificate-s.png" alt="">-->
+                <!--</div>-->
+                <!--<div class="certificate-s">-->
+                <!--<img src="__STATIC__/index/images/certificate-s.png" alt="">-->
+                <!--</div>-->
+                <!--<div class="certificate-s">-->
+                <!--<img src="__STATIC__/index/images/certificate-s.png" alt="">-->
+                <!--</div>-->
+                <!--<div class="certificate-s">-->
+                <!--<img src="__STATIC__/index/images/certificate-h.png" alt="">-->
+                <!--</div>-->
+                <!--<div class="certificate-s">-->
+                <!--<img src="__STATIC__/index/images/certificate-h.png" alt="">-->
+                <!--</div>-->
+                <!--<div class="certificate-s">-->
+                <!--<img src="__STATIC__/index/images/certificate-h.png" alt="">-->
+                <!--</div>-->
+                <!--<div class="certificate-s">-->
+                <!--<img src="__STATIC__/index/images/certificate-h.png" alt="">-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+            <div class="certificate-arc" style="display:flex;justify-content: center;position: absolute;bottom: 30px;width: 100%;">
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--certificate[end]-->
+<!--bot[start]-->
+{include file='public/footer'}
+<script>
+    var certificateLength = $(".certificate-list").length;
+    $(".certificate-list").css({width: $(".certificate-box").width()});
+    $(".certificate-box").css({"overflow": "hidden", "position": "relative"});
+    $(".certificate-wrap").css({"display": "flex", width: certificateLength + "00%", "position": "relative"});
+    if (certificateLength >= 2) {
+        for (var k = 0; k < certificateLength; k++) {
+            var arc = $("<div/>").css({
+                width: 10,
+                height: 10,
+                "border-radius": "50%",
+                "background-color": "white",
+                "margin": "0 10px 0",
+                "cursor": "pointer"
+            });
+            if (k == 0) {
+                arc.addClass("active").css({"background-color": "#efbe1b"});
+            }
+            arc.attr("onclick", "cerclick(this)");
+            // arc.click(function(){
+            //     if(!$(this).hasClass("active")){
+            //         $(this).siblings().removeClass("active").css({"background-color":"white"});
+            //         $(this).addClass("active").css({"background-color":"red"});
+            //         var cerindex1 = $(this).index();
+            //         $(".certificate-wrap").stop().animate({left:0-$(".certificate-box").width()*cerindex1})
+            //     }
+            // });
+
+            $(".certificate-arc").append(arc);
+
+        }
+    }
+
+    function cerclick(that) {
+        if (!$(that).hasClass("active")) {
+            $(that).siblings().removeClass("active").css({"background-color": "#ccc"});
+            $(that).addClass("active").css({"background-color": "#efbe1b"});
+            var cerindex1s = $(that).index();
+            $(".certificate-wrap").stop().animate({left: 0 - $(".certificate-box").width() * cerindex1s})
+        }
+    }
+
+    $(".main").stop().css({top:0});
+    var sp = scrollPage();
+    sp(5, function (page) {
+
+        function two() {
+            $('.about-text').find('p').eq(1).animate({top: '100px'}, 500)
+        }
+
+        function three() {
+            $('.about-text').find('p').eq(2).animate({top: '120px'}, 500)
+        }
+
+        function four() {
+            $('.about-text').find('p').eq(3).animate({top: '0'}, 500)
+        }
+
+        //product
+        function box() {
+            $('.product-box').animate({left: '100px'})
+        }
+
+        function box_two() {
+            $('.product-box').animate({left: '0px'}, 500)
+        }
+        var boxHeight = $(".abouts-box").outerHeight();
+        var st = setTimeout(function () {
+            $('.abouts-box').stop().animate({top: '900px'}, 1000);
+            $('.abouts-box1').stop().animate({marginTop: 900-boxHeight}, 1000);
+            // $('.about-text').find('.abouts-title').stop().css({top: '900px'});
+            // $('.about-text').find('.abouts-text').stop().css({top: '-700px'});
+        }, 1000);
+        // $('.abouts-box').css({top: '-900px'});
+        $('.about-text').find('p').css({top: '900px', opacity: 0});
+        $('.about-text').find('p').eq(3).css({top: '-700px'});
+        $('.product-box').css({left: '1000px'});
+        $('.horo-box').find('.horo-list').css({left: '-1500px'});
+        if (page == 2) {
+            clearTimeout(st);
+
+            $('.abouts-box').stop().animate({top: '50px', opacity: 0.8}, 2000);
+            $(".abouts-box1").stop().animate({marginTop:0-boxHeight,opacity:1},2000);
+            // $('.about-text').find('p').eq(0).stop().animate({top: '150px'}, 500);
+        }
+        if (page == 3) {
+            $('.product-box').animate({left: '0px'}, 1500);
+            // draw({
+            //     element: "quxian",
+            //     content: {
+            //         circleRadius: 10,//点半径
+            //         lineWidth: 6,//线宽
+            //         circleColor: "#f00",//点颜色
+            //         lineColor: "#f00",//线颜色
+            //         textColor: "#fff"
+            //     },
+            //     data: [
+            //         {
+            //             title: "2010",
+            //             info: [
+            //                 "年度营销大户",
+            //                 "板鸭“消费者喜爱产品”",
+            //                 // "第三行"
+            //             ],
+            //             top: 2,
+            //             textUp: 0//0是下，1是上
+            //         }, {
+            //             title: "2011",
+            //             info: [
+            //                 "农产品营销“先进个人",
+            //                 "绵竹市消费者协会理事单位",
+            //                 // "第三行"
+            //             ],
+            //             top: 3,
+            //             textUp: 1//0是下，1是上
+            //         }, {
+            //             title: "2012",
+            //             info: [
+            //                 "年度新增规模企业“目标奖",
+            //                 "年度“消费者信得过单位”",
+            //                 // "第三行"
+            //             ],
+            //             top: 4,
+            //             textUp: 0//0是下，1是上
+            //         }, {
+            //             title: "2013",
+            //             info: [
+            //                 "绵竹市农业产业化经营重点龙头企业",
+            //                 "优秀私营企业",
+            //                 "年度安全生产工作“先进单位",
+            //                 '年度“单位消费者信得过'
+            //             ],
+            //             top: 3,
+            //             textUp: 1//0是下，1是上
+            //         }, {
+            //             title: "2014",
+            //             info: [
+            //                 "年度“优秀基层党组织”",
+            //                 // "第二行",
+            //                 // "第三行"
+            //             ],
+            //             top: 2,
+            //             textUp: 0//0是下，1是上
+            //         }, {
+            //             title: "2015",
+            //             info: [
+            //                 "特色餐饮品牌",
+            //                 "绵竹市农业产业化",
+            //                 "经营重点龙头企业",
+            //                 '年度“四川市场名优产品”',
+            //                 '年度“优秀基层党组织”'
+            //             ],
+            //             top: 3,
+            //             textUp: 1//0是下，1是上
+            //         }, {
+            //             title: "2020",
+            //             info: [
+            //                 "不得不吃品牌店",
+            //                 "消费者最喜爱产品",
+            //                 "特色美食品牌店",
+            //                 '消费者满意示范单位',
+            //                 '招牌藤椒鸭“绵阳十大名品”'
+            //             ],
+            //             top: 7,
+            //             textUp: 0//0是下，1是上
+            //         }
+            //     ]
+            // })
+        }
+        if (page == 4) {
+            $('.horo-box').find('.horo-list').animate({left: '0'}, 1500);
+        }
+    });
+</script>
+<!--bot[end]-->
+</body>
+</html>

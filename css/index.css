@@ -1,0 +1,801 @@
+* {
+    font-size: 16px;
+    font-family: '微软雅黑';
+    -webkit-box-sizing: border-box;
+    /*-moz-box-sizing: border-box;*/
+    box-sizing: border-box;
+    touch-action: none;
+}
+
+body, img ,p{
+    margin: 0;
+    padding: 0;
+}
+
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.continue {
+    /*width: 61.46%;*/
+    width:1180px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.l {
+    float: left;
+}
+
+.r {
+    float: right;
+}
+
+.z-ms-6 {
+    width: 50%;
+}
+
+.z-ms-5 {
+    width: 41.66666666%;
+}
+
+.z-ms-4 {
+    width: 33.33333333%;
+}
+.z-ms-3 {
+    width: 25%;
+}
+.z-ms-2 {
+    width: 16.66666666%;
+}
+.z-ms-10 {
+    width: 83.33333333%;
+}
+.z-ms-9 {
+    width: 75%;
+}
+.z-ms-8 {
+    width: 66.66666667%;
+}
+
+.z-ms-7 {
+    width: 58.33333334%;
+}
+
+.tc {
+    text-align: center !important;
+}
+.all{
+    max-width: 100%;
+    overflow: hidden;
+    z-index: 997;
+}
+/*left-all[start]*/
+.left-all {
+    position: fixed;
+    right: 10px;
+    z-index: 999;
+    top: 45%;
+}
+.left-all ul li {
+    display: block;
+    padding: 10px;
+    /*background: #fff;*/
+    margin: 10px;
+    padding: 3px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.left-all ul li.active, .left-all ul li:hover{
+    display: block;
+    padding: 10px;
+    /*background: #fff;*/
+    margin: 10px;
+    padding: 3px;
+    border-radius: 50%;
+    cursor: pointer;
+    border:1px solid #fff ;
+}
+.left-all ul li span{
+    display: block;
+    background: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+.n-banner{
+    height: 400px;
+}
+.n-banner img {
+    height: 400px;
+    width: 100%;
+}
+/*left-all[end]*/
+/*nav[start]*/
+.nav {
+    /*display: none;*/
+    position: relative;
+    z-index: 99;
+    width: 100%;
+    background: #f8cd00;
+    height: 100px;
+}
+.nav .nav-logo img{
+    padding: 10px 0 5px;
+    height: 95px;
+    max-width: 100%;
+}
+.nav ul  {
+    padding: 14px  0;
+    margin: 16px 0 !important;
+}
+.nav ul li {
+    display: inline-block;
+    padding: 5px 20px 0;
+}
+.nav ul li a{
+    color: #000!important;
+    font-size: 14px;
+    display: inline-block;
+}
+.nav ul li a:hover,.nav ul li a:focus{
+    color: #000!important;
+    text-decoration:none!important;
+}
+.nav ul li.active a,.nav ul li:hover a{
+    padding: 0 0 5px;
+    border-bottom: 2px solid #000 ;
+}
+/*nav[end]*/
+/*banner[start]*/
+/*example*/
+.example {
+    z-index: 5
+}
+
+.example ol {
+    position: relative;
+    width: 80px;
+    height: 20px;
+    top: -30px;
+    left: 60px;
+    margin: 0;
+    padding: 0;
+}
+
+.example ol li {
+    float: left;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background: #fff;
+}
+
+.example ol li.seleted {
+    background: #1AA4CA;
+}
+
+.luara- {
+    position: relative;
+    padding: 0;
+    overflow: hidden
+}
+
+.luara- ul {
+    padding: inherit;
+    margin: 0
+}
+
+.luara- ul li {
+    display: none;
+    padding: inherit;
+    margin: inherit;
+    list-style: none
+}
+
+.luara- ul li:first-child {
+    display: block
+}
+
+.luara- ul li img {
+    width: calc(100%);
+    height: 100%;
+}
+
+/*banner[end]*/
+/*about[start]*/
+.about {
+    background-image: url("../images/about.png");
+    background-size: 100% 100%;
+    animation: about 10s infinite alternate;
+    -webkit-animation: about 10s infinite alternate;
+    -moz-animation: about 10s infinite alternate;
+    -o-animation: about 10s infinite alternate;
+    -ms-animation: about 10s infinite alternate;
+}
+
+.yellow {
+    background-image: linear-gradient(90deg, #f7da50 0%, #f8cd00 100%);
+    opacity: 0.76;
+    height: 100%;
+    position: relative;
+    animation: yellow 3s 1 reverse;
+    left: -900px;
+    /*padding-top: 170px;*/
+}
+
+.yellow .about-text {
+    /*margin-top: 30px;*/
+    position:absolute;
+    left:180px;
+    height:100vh;
+}
+
+.yellow p {
+    position: relative;
+    width: 30px;
+    font-family: MicrosoftYaHei;
+    font-size: 30px;
+    font-weight: bold;
+    font-stretch: normal;
+    line-height: 48px;
+    letter-spacing: 2px;
+    color: #fffefe;
+    float: left;
+    margin: 0 31px;
+    z-index: 3;
+}
+
+.yellow p:nth-child(1) {
+    /*top: 150px;*/
+}
+
+.yellow p:nth-child(3) {
+    /*top: 130px;*/
+}
+
+.yellow p:nth-child(4) {
+    /*top: 0px;*/
+}
+
+@keyframes about {
+    form {
+        background-size: 100% 100%;
+    }
+    to {
+        background-size: 120% 120%;
+    }
+}
+
+@-webkit-keyframes about {
+    form {
+        background-size: 100% 100%;
+    }
+    to {
+        background-size: 120% 120%;
+    }
+}
+
+@-moz-keyframes about {
+    form {
+        background-size: 100% 100%;
+    }
+    to {
+        background-size: 120% 120%;
+    }
+}
+
+@-o-keyframes about {
+    form {
+        background-size: 100% 100%;
+    }
+    to {
+        background-size: 120% 120%;
+    }
+}
+
+@-ms-keyframes about {
+    form {
+        background-size: 100% 100%;
+    }
+    to {
+        background-size: 120% 120%;
+    }
+}
+
+@keyframes yellow {
+    form {
+        left: 0;
+    }
+    to {
+        left: -41.66666666%;
+    }
+}
+
+/*about[end]*/
+/*product[end]*/
+.product {
+    position: relative;
+    z-index: 998;
+    background-image: url("../images/product.jpg");
+    background-size: 100% 100%;
+    animation: product 10s infinite alternate;
+}
+
+.product .continue {
+    padding-top: 170px;
+    overflow: hidden;
+}
+
+.product .continue .product-box {
+    position: relative;
+    left: 2000px;
+    /*left: 1000px;*/
+    display:flex;
+    justify-content: space-between;
+}
+
+.product .continue .product-box .product-list {
+    position: relative;
+    float: left;
+    width: 280px;
+
+    background-size: 100% 100%;
+    padding: 80px 0 70px;
+    left:100px;
+    opacity:0;
+}
+
+/*.product .continue .product-box .product-list:hover .product-text {*/
+    /*animation: product-text 1s;*/
+    /*animation-fill-mode: forwards;*/
+    /*-webkit-animation-fill-mode: forwards;*/
+/*}*/
+/*.product .continue .product-box .product-list:hover .product-text p {*/
+    /*color: red;*/
+/*}*/
+
+.product .continue .product-title {
+    padding-bottom: 40px;
+    text-align: center;
+    font-family: MicrosoftYaHei;
+    font-size: 36px;
+    font-weight: bold;
+    font-stretch: normal;
+    line-height: 36px;
+    letter-spacing: 3px;
+    color: #ffffff;
+}
+
+.product .continue .product-box .product-list .product-text {
+
+    position: relative;
+    background-color: #000000;
+    opacity: 0;
+    width: 100%;
+    /*top: 230px;*/
+    padding: 5px 0;
+}
+
+.product .continue .product-box .product-list .product-text p {
+    font-family: MicrosoftYaHei;
+    font-size: 32px;
+    font-weight: bold;
+    font-stretch: normal;
+    line-height: 36px;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.product .continue .product-box .product-list .product-text p:last-child {
+    font-family: MicrosoftYaHeiLight;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 36px;
+    letter-spacing: 3px;
+    /*color: #ffffff;*/
+}
+
+@keyframes product {
+    form {
+        background-size: 100% 100%;
+    }
+    to {
+        background-size: 120% 120%;
+    }
+}
+
+/*@keyframes product-text {*/
+    /*form {*/
+        /*top: 230px;*/
+        /*opacity: 0;*/
+    /*}*/
+    /*to {*/
+        /*top: 0px;*/
+        /*opacity: 0.7;*/
+    /*}*/
+/*}*/
+.product-more {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.product-more a {
+    padding: 5px 10px;
+    border: solid 1px #000000;
+    font-family: MicrosoftYaHeiLight;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    line-height: 28px;
+    letter-spacing: 1px;
+    color: #333333;
+    /*background: ;*/
+}
+
+/*product[end]*/
+/*horo[start]*/
+.horo {
+    background-image: url("../images/horo.jpg");
+    background-size: 100% 100%;
+    color: #fff;
+    animation: horo 10s infinite alternate;
+}
+
+.horo .continue {
+    text-align: center;
+    padding: 110px 0 252px;
+}
+
+.horo .continue .horo-title h2 {
+    font-family: MicrosoftYaHei;
+    font-size: 36px;
+    font-weight: bold;
+    font-stretch: normal;
+    line-height: 36px;
+    letter-spacing: 3px;
+    color: #ffffff;
+}
+
+.horo .continue .horo-title p {
+    text-align: left;
+    font-family: MicrosoftYaHeiLight;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    line-height: 36px;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+.horo .continue .horo-box {
+    margin-top: 100px;
+    max-width: 100%;
+    overflow: hidden;
+    display:flex;
+    justify-content: space-between;
+    height:250px;
+}
+
+.horo .continue .horo-box .horo-list {
+    position: relative;
+    /*float: left;*/
+    /*width: 20%;*/
+    /*width: calc(20% - 50px);*/
+    width:180px;
+    height:220px;
+    top:-244px;
+    /*margin: 0 25px;*/
+}
+
+.horo .continue .horo-box .horo-list .horo-list-box {
+    background-color: #f8cd00;
+    box-shadow: 0px 10px 13px 0px rgba(0, 0, 0, 0.61);
+    opacity: 0.7;
+    padding: 28px 0px;
+    border-radius: 10px;
+}
+
+.horo .continue .horo-box .horo-list .horo-list-box img {
+    margin-bottom: 20px;
+}
+
+.horo .continue .horo-box .horo-list .horo-list-box p {
+    margin: 10px 0;
+    font-family: MicrosoftYaHeiLight;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    line-height: 21px;
+    letter-spacing: 0px;
+    color: #333333;
+}
+@keyframes horo {
+    form {
+        background-size: 100% 100%;
+    }
+    to {
+        background-size: 120% 120%;
+    }
+}
+/*horo[end]*/
+/*men[start]*/
+.men{
+    background-image: url("../images/men.jpg");
+    background-size: 100% 100%;
+    color: #fff;
+    animation: men 10s infinite alternate;
+}
+@keyframes men {
+    form {
+        background-size: 100% 100%;
+    }
+    to {
+        background-size: 120% 120%;
+    }
+}
+/*men[end]*/
+/*commone[start]*/
+.commone {
+    background-image: url("../images/commone.jpg");
+    background-size: 100% 100%;
+    color: #fff;
+    animation: horo 10s infinite alternate;
+}
+@keyframes commone {
+    form {
+        background-size: 100% 100%;
+    }
+    to {
+        background-size: 120% 120%;
+    }
+}
+.commone .continue {
+    padding: 50px 0 43px;
+}
+
+.commone .continue .commone-title h2 {
+    font-family: MicrosoftYaHei;
+    font-size: 36px;
+    font-weight: bold;
+    font-stretch: normal;
+    line-height: 36px;
+    letter-spacing: 3px;
+    color: #ffffff;
+}
+
+.commone .continue .commone-box {
+    margin-top: 0px;
+    padding: 0 200px;
+}
+
+.commone .continue .commone-box .commone-group {
+    margin: 20px 0;
+    text-align: right;
+    position: relative;
+}
+
+.commone .continue .commone-box .commone-group span {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.commone .continue .commone-box .commone-group label {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.commone .continue .commone-box .commone-group input {
+    width: 300PX;
+    height: 30px;
+    border: solid 2px #f8cd00;
+    background-color: transparent;
+    color: #fff;
+    outline:none;
+    /*opacity: 0;*/
+    /*border: 1px solid #fff;*/
+}
+
+.commone .continue .commone-box .commone-group input[type='radio'] {
+    width: 16px;
+    height: 16px;
+    background-color: #f8cd00;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #fff;
+    /*font-size: 16px;*/
+}
+
+.commone .continue .commone-box .commone-group button {
+    width: calc(70% + 6px);
+    height: 38px;
+    font-family: MicrosoftYaHei;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    line-height: 36px;
+    letter-spacing: 1px;
+    color: #000000;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+.commone .continue .commone-box .commone-group button:hover{
+    color: #ffffff;
+    background-color: #efbe1b;
+
+}
+/*commone[end]*/
+
+.bot {
+    width: 100%;
+    height: 300px;
+    background: #F8CD00;
+    padding: 30px 0 0;
+}
+
+.bot .bot-cont {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.bot .bot-cont-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bot .bot-cont-top .left {
+    display: flex;
+    width: 260px;
+    justify-content: space-between;
+}
+
+.bot .bot-cont-top .left .bot-product div,
+.bot .bot-cont-top .left .bot-news div,
+.bot .bot-cont-top .left .bot-about div {
+    margin-top: 5px;
+}
+
+.bot .bot-cont-top .left .bot-product div:nth-child(1),
+.bot .bot-cont-top .left .bot-news div:nth-child(1),
+.bot .bot-cont-top .left .bot-about div:nth-child(1) {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+}
+
+.bot .bot-cont-top .right {
+    text-align: right;
+}
+
+.bot .bot-cont-top .right div {
+    margin-top: 19px;
+}
+
+.bot .bot-cont-top .logo {
+    width: 161px;
+    height: 147px;
+}
+
+.bot .bot-cont-top .ewm {
+    width: 70px;
+    height: 70px;
+}
+
+.bot .bot-cont-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #333333;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.bot .bot-cont-bottom div:nth-child(2) {
+    margin-top: 10px;
+}
+@media screen and (min-width: 940px) and (max-width: 1350px){
+    .continue {
+        width: 90%;
+    }
+    .horo .continue .horo-box {
+        margin-top: 40px;
+    }
+    .horo .continue .horo-box .horo-list .horo-list-box {
+        padding: 15px 0px;
+    }
+    .commone .continue{
+        /*padding: 0;*/
+    }
+    .commone .continue .commone-box{
+        /*margin-top: 0;*/
+    }
+    .bot-cont{
+        width: 90%!important;
+    }
+    .bot .bot-cont-top .logo{
+        width: 100px!important;
+        height: 100px!important;
+    }
+    .bot .bot-cont-top .right div{
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .continue {
+        width: 90%;
+    }
+
+    .nav-list ul {
+        display: none;
+    }
+
+    .nav-list.up ul {
+        display: block;
+        position: absolute;
+        top: 48px;
+        right: 0;
+        z-index: 999;
+        width: 40%;
+        opacity: 0.5;
+        /*padding: 0 30px;*/
+    }
+
+    .nav-list.up ul li {
+        display: block;
+        background: #fff;
+        border: 1px solid #ccc;
+    }
+
+    .mo {
+        float: right;
+        cursor: pointer;
+        margin: 16px 0;
+    }
+
+    .mo span {
+        display: block;
+        background: #fff;
+        padding: 2px 0px;
+        margin: 5px 0;
+        width: 30px;
+    }
+
+    .product .continue .product-box .product-list {
+        position: relative;
+        float: left;
+        width: calc(50% - 20px);
+        margin: 10px 10px;
+        background-size: 100% 100%;
+        padding: 50px 0 30px;
+    }
+
+    /*.product .continue .product-box .product-list .product-text {*/
+        /*top: 0px;*/
+        /*opacity: 0.7;*/
+    /*}*/
+
+    .commone .continue .commone-box {
+        /*width: 100%;*/
+        margin-top: 30px;
+        padding: 0;
+    }
+
+    .bot-cont-top {
+        display: none !important;
+        height: 282px
+    }
+}

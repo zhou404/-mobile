@@ -1,0 +1,526 @@
+{include file='public/header'}
+{include file='public/nbanner'}
+<link rel="stylesheet" href="__STATIC__/index/css/consulting.css">
+<link rel="stylesheet" href="__STATIC__/index/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<div class="nav-two">
+    <div class="nav-two-content">
+        <div>
+            <a href="javascript:void(0);" data-name="p1">加盟流程</a>
+        </div>
+        <div>
+            <a href="javascript:void(0);" data-name="p2">加盟支持</a>
+        </div>
+        {volist name='join' id='vo' key = 'key'}
+        <div>
+            <a href="javascript:void(0);" data-name="p{$key+2}">{$vo.title}</a>
+        </div>
+        {/volist}
+    </div>
+
+</div>
+<style>
+    .nav-two{position:fixed;top:100px;display:flex;justify-content: center;z-index:10002;width:100%;background-color:#f2cb47;height:50px;line-height:50px;border-top:2px solid white;}
+    .nav-two .nav-two-content{width:1155px;display:flex; justify-content: center;}
+    .nav-two .nav-two-content a{font-size:14px;color:#666;display:block;width:156px;text-align:center;}
+    .nav-two .nav-two-content div:hover a{color:#000;text-decoration: none;}
+
+    .n-banner{margin-top:150px;}
+</style>
+<div class="join-a">
+    <a href="#join">我要加盟</a>
+</div>
+
+<style>
+    .n-banner{height:700px;}
+    .n-banner img{height:700px;}
+    .join-a {
+        position: absolute;
+        top: 300px;
+        text-align: center;
+        letter-spacing: 2px;
+        width: 100%;
+    }
+
+    .join-a a {
+        font-size: 24px;
+        font-weight: normal;
+        display: inline-block;
+        padding: 8px 36px;
+        border: 2px solid #fff;
+        color: #ffffff;
+        text-decoration: none
+    }
+
+    .join-a a:hover, .join-a a:focus {
+        text-decoration: none;
+        color: #fff;
+    }
+</style>
+<div class="m2" data-name="p1">
+    <!--<img src="./images/1.jpg" alt="">-->
+    <div style="height: 200px;background: #fcfcf7;"></div>
+    <div class="do row" style="position:relative;">
+        <div style="text-align: center;">
+            <h2 style="margin: 0px 0 30px;font-family: MicrosoftYaHei;font-size: 36px;font-weight: normal;font-stretch: normal;line-height: 48px;letter-spacing: 0px;color: #333333;">
+                如何加盟土门赵鸭子</h2>
+        </div>
+        <div class="step-pan">
+            <div class="step col-xs-2 col-sm-6" style="position: relative">
+                <div class="w-c">
+                    <div class="n-c" style="color: #333">
+                        01
+                    </div>
+                </div>
+                <div class="txt">
+                    <div style="font-weight:bold;">录入资料</div>
+                </div>
+                <!--<img src="__STATIC__/index/images/xu.png"-->
+                     <!--style="position: absolute;height: 2px;top: 45px;right: -70px;width: 55%" alt="">-->
+            </div>
+            <div class="step col-xs-2 col-sm-6">
+                <div class="w-c">
+                    <div class="n-c" style="color: #333">
+                        02
+                    </div>
+                </div>
+                <div class="txt">
+                    <div style="font-weight:bold;">公司审核</div>
+                </div>
+                <!--<img src="__STATIC__/index/images/xu.png"-->
+                     <!--style="position: absolute;height: 2px;top: 45px;right: -70px;width: 55%" alt="">-->
+
+            </div>
+            <div class="step col-xs-2 col-sm-6">
+                <div class="w-c">
+                    <div class="n-c" style="color: #333">
+                        03
+                    </div>
+                </div>
+                <div class="txt">
+                    <div style="font-weight:bold;">通过审核</div>
+                </div>
+                <!--<img src="__STATIC__/index/images/xu.png"-->
+                     <!--style="position: absolute;height: 2px;top: 45px;right: -70px;width: 55%" alt="">-->
+
+            </div>
+            <div class="step col-xs-2 col-sm-6">
+                <div class="w-c">
+                    <div class="n-c" style="color: #333">
+                        04
+                    </div>
+                </div>
+                <div class="txt">
+                    <div style="font-weight:bold;">开店营业</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</div>
+<style>
+    .step-pan:before{content:"";display:block;position:absolute;width:75%;margin-top:45px;left:12.5%;border-bottom:2px dashed #f8cd00;}
+    .step .w-c {
+        position: relative;
+        top: -100px;
+        opacity: 0;
+    }
+
+    .step .txt {
+        position: relative;
+        top: 100px;
+        opacity: 0;
+    }
+</style>
+<script>
+    dong();
+
+    function dong() {
+        $('.step .w-c').eq(3).stop().animate({top: '0', opacity: 1}, 1000);
+        $('.step .txt').eq(3).stop().animate({top: '0', opacity: 1}, 1000);
+        $('.step .w-c').eq(2).stop().animate({top: '0', opacity: 1}, 800);
+        $('.step .txt').eq(2).stop().animate({top: '0', opacity: 1}, 800);
+        $('.step .w-c').eq(1).stop().animate({top: '0', opacity: 1}, 600);
+        $('.step .txt').eq(1).stop().animate({top: '0', opacity: 1}, 600);
+        $('.step .w-c').eq(0).stop().animate({top: '0', opacity: 1}, 400);
+        $('.step .txt').eq(0).stop().animate({top: '0', opacity: 1}, 400);
+    }
+
+    console.log(jQuery(window).height());
+    if (document.attachEvent) {
+        document.attachEvent('onmousewheel', test);
+
+    }
+    //Firefox使用addEventListener添加滚轮事件
+    if (document.addEventListener) {//firefox
+        document.addEventListener('DOMMouseScroll', test, false);
+    }
+    //Safari与Chrome属于同一类型
+    window.onmousewheel = document.onmousewheel = test;
+    var hehe = 0;
+
+    function test() {
+
+        var ieheight = $(document).scrollTop();
+        var pantop = $(".do").offset().top;
+        var panheight = $(".do").height();
+        console.log(ieheight,pantop,panheight);
+        // console.log(jQuery(window).height() + ieheight);
+        if (pantop - jQuery(window).height() + panheight < ieheight && hehe == 0) {
+            dong();
+            hehe++;
+        }
+        if (ieheight>pantop+panheight || ieheight<pantop-jQuery(window).height()+100) {
+            $('.step .w-c').stop().css({top: '-100px', opacity: 0});
+            $('.step .txt').stop().css({top: '100px', opacity: 0});
+            hehe = 0;
+        }
+        console.log(hehe);
+        // if(ieheight >640)
+    }
+
+</script>
+<div class="zhichi all" data-name="p2">
+    <div class="continue" style="padding: 170px 0 150px 0px;">
+        <div class="zhichi-box">
+            <div class="zhichi-title">
+                <h2>加盟支持</h2>
+            </div>
+            <div class="zhichi-icon">
+                {volist name='zhichi' id='vo'}
+                <div class="zhichi-icon-list">
+                    <img src="{$vo.image.url}" alt="">
+                    <p>{$vo.title}</p>
+                </div>
+                {/volist}
+
+                <div class="clear"></div>
+            </div>
+            <div class="crossline">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="zhichi-text">
+                {volist name='zhichi' id='vo'}
+                <div class="zhichi-text-list">
+                    <p>{$vo.details}</p>
+                </div>
+                {/volist}
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .crossline{width:100%;height:10px;border-bottom:1px solid #222;position:relative;top:-30px;display:flex;justify-content: space-around;}
+    .crossline div{height:10px;width:10px;background-color:#fff;border:1px solid #efbe1b;border-radius: 5px;margin-top:5px;}
+    .zhichi {
+        background: url("__STATIC__/index/images/zhichi-bg.jpg") no-repeat center center;
+    }
+    .zhichi-box{
+        background: rgba(255,255,255,0.7);
+        padding: 150px 10px 80px;
+        position:relative;
+    }
+    .zhichi-title h2 {
+        font-family: MicrosoftYaHei-Bold;
+        font-size: 32px;
+        font-weight: bold;
+        font-stretch: normal;
+        line-height: 36px;
+        letter-spacing: 2px;
+        color: #efbe1b;
+    }
+
+    .zhichi-box {
+        padding: 80px 0 20px;
+    }
+
+    .zhichi-icon-list {
+
+    }
+    .zhichi-icon{
+        margin-top: 50px;
+    }
+    .zhichi-icon-list {
+        float: left;
+        margin: 0 18px 30px;
+        width: calc(16.66% - 36px);
+        font-family: MicrosoftYaHei-Bold;
+        font-size: 16px;
+        font-weight: bold;
+        font-stretch: normal;
+        line-height: 36px;
+        letter-spacing: 1px;
+        color: #333333;
+        /*text-align: left;*/
+    }
+
+    .zhichi-icon-list img {
+        max-width: 56px;
+        height: 54px;
+        margin-bottom: 10px;
+    }
+
+    .zhichi-text-list {
+        float: left;
+        margin: 0 18px;
+        width: calc(16.66% - 36px);
+
+    }
+    .zhichi-text-list p{
+        font-family: MicrosoftYaHeiLight;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 24px;
+        letter-spacing: 1px;
+        color: #666;
+    }
+</style>
+{volist name='join' id='vo' key = 'key'}
+<div class="join-pan" data-name="p{$key+2}">
+    <div class="join-img">
+        <img src="{$vo.image.url}" alt="">
+    </div>
+    <div class="join-info">
+        <div class="join-title">{$vo.title}</div>
+        <div class="join-con">{$vo.details}</div>
+
+    </div>
+</div>
+{/volist}
+<style>
+    .join-pan{width:100%;height:600px;display:flex;justify-content: center;}
+    .join-img{width:20%;margin:120px 20px;text-align:right;}
+    /*display:flex;flex-direction: column;justify-content: center;*/
+    .join-img img{width:100%;}
+    .join-info{width:40%;margin:80px 20px;}
+    .join-pan:nth-child(2n+1){background-color:#f8cd00;}
+    .join-pan:nth-child(2n) .join-img{order:1;text-align:left;}
+    .join-pan:nth-child(2n) .join-info{order:0;}
+    .join-title{text-align:center;font-size:16px;margin-bottom:20px;font-weight:bold;
+        overflow:hidden;
+        white-space:nowrap;
+        text-overflow:ellipsis;}
+    .join-con{line-height:40px;font-size:14px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 12;
+        overflow: hidden;}
+    .join-con p{font-size:14px;}
+    .join-con p span{display:block;}
+</style>
+<!--<div class="m3">-->
+
+<!--<div class="row box">-->
+<!--<img class="col-xs-6" src="__STATIC__/index/images/1.jpg" alt="">-->
+<!--<div class="m-txt col-xs-6">-->
+<!--<div class="til">装修支持 </div>-->
+<!--<div class="intro">打找完美店铺形象 连锁品牌由专业的设计 师和装修队伍量身定制装修方案 公司统一安装-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="m4">-->
+
+<!--<div class="row box">-->
+<!--<div class="m-txt col-xs-6">-->
+<!--<div class="til">开业支持 </div>-->
+<!--<div class="intro">运营专员督导巡店 专业的培训团队定期 培训门店经营技巧 产品专业知识产品陈 列、市场预测、氛围、营销知识等-->
+<!--</div>-->
+<!--</div>-->
+<!--<img class="col-xs-6" src="__STATIC__/index/images/1.jpg" alt="">-->
+
+<!--</div>-->
+<!--</div>-->
+<!--<div class="m3">-->
+
+<!--<div class="row box">-->
+<!--<img class="col-xs-6" src="__STATIC__/index/images/1.jpg" alt="">-->
+<!--<div class="m-txt col-xs-6">-->
+<!--<div class="til">营运支持 </div>-->
+<!--<div class="intro">运营专员督导巡店 专业的培训团队定期 培训门店经营技巧 产品专业知识产品陈 列、市场预测、氛围、营销知识等-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="m4">-->
+
+<!--<div class="row box">-->
+<!--<div class="m-txt col-xs-6">-->
+<!--<div class="til">物流支持 </div>-->
+<!--<div class="intro">公司提供的物流配送服务 能保证 快捷高效地实现货品流通满足市 场一线的配送需求-->
+<!--</div>-->
+<!--</div>-->
+<!--<img class="col-xs-6" src="__STATIC__/index/images/1.jpg" alt="">-->
+
+<!--</div>-->
+</div>
+
+<!--commone[start]-->
+<a name="join"></a>
+<div class="commone all">
+    <div class="continue">
+        <div class="commone-title">
+            <h2>加入我们</h2>
+        </div>
+        <div class="commone-box">
+            <form action="{:url('index/conment')}" method="post" id="conment">
+                <div class="commone-group">
+                    <!--<span>*姓名</span>-->
+                    <input type="text" name="user_name" placeholder="请输您的姓名">
+                </div>
+                <div class="commone-group tc">
+                    <input type="radio" name="user_sex" value="0"> <label>先生</label>
+                    <input type="radio" name="user_sex" value="1"> <label>女士</label>
+                </div>
+                <div class="commone-group">
+                    <!--<span>*联系电话</span>-->
+                    <input type="text" name="user_phone" placeholder="请输您的联系电话">
+                </div>
+                <!--<div class="commone-group">-->
+                <!--<span>*加盟城市</span>-->
+                <!--<select name="province" id="province">-->
+                <!--<option value="0">请选择省份</option>-->
+                <!--</select>-->
+                <!--<select name="city" id="city">-->
+                <!--<option value="0">请选择城市</option>-->
+                <!--</select>-->
+                <!--<select name="area" id="area">-->
+                <!--<option value="0">请选择区</option>-->
+                <!--</select>-->
+                <!--</div>-->
+                <div class="commone-group">
+                    <button style="color: #000">立即加入</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        $('#conment').submit(function () {
+            var urls = $(this).attr('action');
+            console.log(urls);
+            var fd = new FormData($('#conment')[0]);
+            console.log(fd);
+            if($('input[name=user_name]').val() == ''){
+                alert('联系人不能为空');
+                return false;
+            }
+            if($('input[name=user_phone]').val() == ''){
+                alert('联系方式不能为空');
+                return false;
+            }
+            $.ajax({
+                url: urls,
+                type: "post",
+                data: fd,
+                processData: false,
+                contentType: false,
+                success: function (returnedData) {
+                    console.log(returnedData);
+                    if(returnedData.state){
+                        alert('您已成功留言。请耐心等待信息');
+                    }else{
+                        alert(returnedData.msg);
+                    }
+                },
+                error: function () {
+                    parent.layer.msg('网络错误，稍后再试');
+                }
+            });
+            return false;
+        })
+    </script>
+    <style>
+        .commone .continue {
+            padding: 160px 0;
+        }
+
+        .commone .continue .commone-box .commone-group {
+            top: 0px;
+            width: 100%;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .commone .continue .commone-box .commone-group input, .commone .continue .commone-box .commone-group button {
+            width: 54%;
+        }
+    </style>
+    <script>
+        $(function(){
+            $(".nav-two-content a").click(function(){
+                var name = $(this).data("name");
+                var top = $("div[data-name="+name+"]").offset().top - 150;
+                $("body,html").animate({scrollTop:top});
+            });
+
+        });
+        // console.log($.parseJSON('{$cities}'));
+        // var provinces = $.parseJSON('{$provinces}');
+        // var citys = $.parseJSON('{$cities}');
+        // var areas = $.parseJSON('{$areas}');
+        //
+        // //填充省列表
+        // for (var i = 0; i < provinces.length; i++) {
+        //     $("#province").append("<option value='" + provinces[i]['provinceid'] + "'>" + provinces[i]['province'] + "</option>")
+        // }
+
+        // //填充市列表
+        // for(var i=0;i<citys[$("#province option:selected").val()].length;i++){
+        //     $("#city").append("<option value='"+citys[$("#province option:selected").val()][i]['id']+"'>"+citys[$("#province option:selected").val()][i]['city']+"</option>")
+        // }
+        //
+        // //填充区列表
+        // for(var i=0;i<areas[$("#province option:selected").val()][$("#city option:selected").val()].length;i++){
+        //     $("#area").append("<option value='"+i+"'>"+areas[$("#province option:selected").val()][$("#city option:selected").val()][i]+"</option>")
+        // }
+
+
+        //省份选项被改动时
+        // $("#province").change(function () {
+        //     $("#city").empty();//清空市列表
+        //     $("#area").empty();
+        //     var that = $(this);
+        //     var citys_i = 0
+        //     //填充市列表
+        //     for (var i = 0; i < citys.length; i++) {
+        //         if (citys[i]['provinceid'] == that.val()) {
+        //             $("#city").append("<option value='" + citys[i]['cityid'] + "'>" + citys[i]['city'] + "</option>");
+        //             citys_i++;
+        //         }
+        //
+        //     }
+        //     //填充区列表
+        //     if (citys_i != 1) {
+        //         $("#area").append("<option value='0'>请选择</option>")
+        //     } else {
+        //         for (var i = 0; i < areas.length; i++) {
+        //
+        //             $("#area").append("<option value='" + areas[i]['areaid'] + "'>" + areas[i]['area'] + "</option>")
+        //         }
+        //
+        //     }
+        //
+        // })
+        //
+        // //市选项被改动时
+        // $("#city").change(function () {
+        //     $("#area").empty();
+        //     var that = $(this);
+        //     for (var i = 0; i < areas.length; i++) {
+        //         if (areas[i]['cityid'] == that.val())
+        //             $("#area").append("<option value='" + areas[i]['areaid'] + "'>" + areas[i]['area'] + "</option>")
+        //     }
+        //
+        // })
+        // i = -1;
+    </script>
+</div>
+<!--commone[end]-->
+{include file='public/footer'}

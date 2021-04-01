@@ -1,0 +1,23 @@
+{include file='public/header'}
+<link rel="stylesheet" href="__STATIC__/index/css/newsDetails.css">
+<link rel="stylesheet" href="__STATIC__/index/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<div class="newsDetail-cont">
+    <div class="title">
+        {$article.title}
+    </div>
+    <div class="intro">
+        {$article.details}
+    </div>
+    <div class="detail-img">
+        <img style="max-width: 100%;" src="{$article.image.url}" alt="">
+    </div>
+    <div class="page">
+        <div class="pre">
+            上一篇：{notempty name='$pre'}<a href="{:url('/'.$pre.nav.urls.'/'.$pre.id)}">{$pre.title}</a>{else/}没有了{/notempty}
+        </div>
+        <div class="next">
+            下一篇：{notempty name='$next'}<a href="{:url('/'.$next.nav.urls.'/'.$next.id)}">{$next.title}</a>{else/}没有了{/notempty}
+        </div>
+    </div>
+</div>
+{include file='public/footer'}

@@ -1,0 +1,42 @@
+<div class="example">
+    <ul>
+        {volist name='banner' id='vo'}
+        <li><a href="{$vo.link}" target="_blank"><img src="{$vo.image.url}" alt="1"/></a></li>
+        {/volist}
+    </ul>
+    <ol style="left: 47%;">
+        {volist name='banner' id='vo' key='key'}
+        <li style="border-radius: 50%" class="{eq name='$key' value='1'}seleted{/eq}"></li>
+        {/volist}
+    </ol>
+
+</div>
+<div style="position: absolute;width: 100%;z-index: 99;top:90vh;text-align: center">
+    <img style="z-index: 99" src="__STATIC__/index/images/down.png" alt="">
+</div>
+
+
+<!--<a href="#aaaa" class="all-a">{$this_nav.title}</a>-->
+<style>
+    .all-a{position: absolute;top:700px;display: inline-block;font-family: MicrosoftYaHei-Bold;
+        font-size: 48px;
+        font-weight: bold;
+        font-stretch: normal;
+        line-height: 36px;
+        letter-spacing: 14px;
+        color: #ffffff;text-decoration: none;z-index: 999;width: 100%;text-align: center}
+    /*.all-a:hover{}*/
+    .all-a:hover,.join-a:focus{text-decoration: none;color: #fff;}
+</style>
+<style>
+    .main{
+        width:100vw;
+        position:relative;
+    }
+    body{
+
+        width:100vw;
+        height:100vh;
+        overflow: hidden;
+    }
+</style>

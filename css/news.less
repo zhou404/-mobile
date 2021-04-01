@@ -1,0 +1,190 @@
+.img-box {
+    img {
+        width: 100%;
+        height: 700px;
+    }
+
+}
+
+.news-box {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 100px;
+
+    .c-title {
+        font-size: 22px;
+        font-weight: bold;
+        font-stretch: normal;
+        margin-bottom: 20px;
+    }
+
+    .e-title {
+        margin-bottom: 20px;
+    }
+
+    .news {
+        margin-bottom: 88px;
+        &-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 0;
+            border-bottom: 1px solid #333;
+            .left {
+                img {
+                    width: 280px;
+                    height: 200px;
+                    margin-right: 10px;
+                }
+            }
+
+            .middle {
+                //width: 635px;
+
+                div:nth-child(1) {
+                    font-size: 22px;
+                    font-weight: bold;
+                    font-stretch: normal;
+                    line-height: 36px;
+                    letter-spacing: 2px;
+                    color: #333333;
+                    text-align: left;
+                }
+
+                div:nth-child(2) {
+                    font-size: 14px;
+                    font-weight: bold;
+                    font-stretch: normal;
+                    line-height: 28px;
+                    letter-spacing: 1px;
+                    color: #666666;
+                    text-align: left;
+                    margin-top: 15px;
+                }
+
+                div:nth-child(3) {
+
+                    text-align: left;
+                    margin-top: 25px;
+
+                    div {
+                        font-size: 14px;
+                        font-weight: bold;
+                        font-stretch: normal;
+                        text-align: center;
+                        line-height: 28px;
+                        letter-spacing: 1px;
+                        color: #333333;
+                        width: 110px;
+                        height: 28px;
+                        border: 1px solid #333;
+                    }
+                }
+
+            }
+
+            .right {
+                text-align: center;
+
+                div:nth-child(1) {
+                    font-family: MicrosoftYaHei-Bold;
+                    font-size: 36px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    line-height: 75px;
+                    letter-spacing: 4px;
+                    color: #333333;
+                }
+
+                div:nth-child(2) {
+                    width: 102px;
+                    height: 0px;
+                    border: solid 1px #000000;
+                }
+
+                div:nth-child(3) {
+                    font-family: MicrosoftYaHei-Bold;
+                    font-size: 18px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    line-height: 75px;
+                    letter-spacing: 2px;
+                    color: #333333;
+                }
+
+            }
+        }
+
+    }
+
+}
+
+.bot {
+    width: 100%;
+    height: 350px;
+    background: #F8CD00;
+    padding: 60px 0;
+
+    .bot-cont {
+        width: 60%;
+        margin: 0 auto;
+
+
+        &-top {
+            display: flex;
+            justify-content: space-between;
+
+            .left {
+                display: flex;
+                width: 260px;
+                justify-content: space-between;
+
+                .product,
+                .news,
+                .about {
+                    div {
+                        margin-top: 5px;
+                    }
+
+                    div:nth-child(1) {
+                        margin: 0;
+                        font-size: 16px;
+                        font-weight: bold;
+                        font-stretch: normal;
+                    }
+                }
+
+
+            }
+
+            .right {
+                text-align: right;
+
+                div {
+                    margin-top: 19px;
+                }
+            }
+
+            .logo {
+                width: 161px;
+                height: 147px;
+            }
+
+            .ewm {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        &-bottom {
+            margin-top: 20px;
+            border-top: 1px solid #333333;
+            padding-top: 20px;
+            text-align: center;
+
+            div:nth-child(2) {
+                margin-top: 10px;
+            }
+        }
+    }
+}
