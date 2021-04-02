@@ -16,13 +16,7 @@
 
     .Carousel img {
         width: 100%;
-    }
-
-    .en {
-        font-size: 36px;
-        text-transform: uppercase;
-        opacity: .15;
-        font-family: Arial, sans-serif, "Microsoft YaHei", "微软雅黑" !important;
+        display: block;
     }
 
     .advantage {
@@ -79,11 +73,11 @@
 
     .text .content {
         font-size: 1.21em;
+        text-indent: 4.41em;
     }
 
     .competitive {
         width: 100%;
-        margin-top: 40px;
     }
 
     .m1 {
@@ -138,7 +132,7 @@
     .tg a div {
         width: 150px;
         height: 150px;
-        background-color: rgb(230,230,230);
+        background-color: rgb(230, 230, 230);
         border-radius: 50%;
         display: flex;
         justify-content: center;
@@ -147,27 +141,171 @@
 
     .scene {
         width: 100%;
-        background-color: rgb(240,240,240);
+        background-color: rgb(240, 240, 240);
+        padding-top: 40px;
     }
+
     .scene-w {
         width: 90vw;
         margin: 0 auto;
-        background-color: #1AA4CA;
+    }
+
+    .head {
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        color: rgb(153, 153, 153);
+    }
+
+    .head .name {
+        font-size: 48px;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .scene-all {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+
+    .scene-item {
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+        width: 44vw;
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .scene-item .img {
+        width: 100%;
+    }
+
+    .scene-item .img img {
+        width: 100%;
+    }
+
+    .scene-item .name {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        height: 50px;
+        line-height: 50px;
+        background-color: rgb(242, 202, 71);
+        text-align: center;
+        color: #FFF;
+        font-size: 24px;
+    }
+
+    .successful {
+        width: 100%;
+        background-color: #FFF;
+        padding-bottom: 40px;
+    }
+
+    .successful .head {
+        height: 200px;
+        text-align: center;
+        color: rgb(232, 232, 232);
+        font-size: 40px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .successful .head .name {
+        font-size: 58px;
+    }
+
+    .item {
+        background-color: rgb(240, 240, 240);
+        padding: 60px 0;
+        margin-bottom: 40px;
+    }
+
+    .item-head {
+        display: flex;
+        align-items: center;
+        font-size: 50px;
+        font-weight: bold;
+    }
+
+    .w {
+        width: 90vw;
+        margin: 0 auto;
+    }
+
+    .item-head .img {
+        margin-right: 100px;
+        width: 160px;
+        height: 160px;
+        position: relative;
+    }
+
+    .item-head .img img {
+        width: 100%;
+    }
+
+    .ite-content {
+        margin-top: 30px;
+        color: rgb(102, 102, 102);
+        text-indent: 4.41em;
+    }
+
+    .more {
+        width: 100%;
+        text-align: center;
+    }
+
+    .more-box {
+        margin: 0 auto;
+        width: 550px;
+        height: 100px;
+        line-height: 100px;
+        background-color: #cf000e;
+        font-size: 36px;
+        color: #FFF;
+    }
+
+    .bottom {
+        color: #FFF;
+        font-size: 14px;
+    }
+
+    .btm {
+        background-color: #171717;
+        padding: 40px 0;
+    }
+    .btm .w {
+        text-align: center;
+    }
+    .btm .w p {
+        font-size: 16px;
+        display: inline;
+        color: #cf000e;
+        font-weight: bolder;
+    }
+    .btm .w a {
+        color: #FFF;
+    }
+    .btm-1 {
+        background-color: #0e0e0e;
     }
 </style>
 <body>
 <div>
     <!--轮播图-->
-    <div class="Carousel ">
+    <div class="Carousel">
         <img src="./images/n-banner.jpg" alt="">
     </div>
     <!--品牌优势-->
     <div class="advantage">
         <div class="advantage-w">
             <div class="ys-head">
-                <div class="en">
-                    Brand advantage
-                </div>
                 <div class="cn">
                     <i>品牌</i>
                     <b>优势</b>
@@ -194,7 +332,6 @@
     <!--竞争优势-->
     <div class="competitive">
         <div class="ys-head m1">
-            <div class="eg">support system</div>
             <div>
                 <i>竞争</i>
                 <b>优势</b>
@@ -243,8 +380,115 @@
     <!--开业现场-->
     <div class="scene">
         <div class="scene-w">
-            <div class="scene-item">
-                <div></div>
+            <div class="head">
+                <div class="name">开业现场</div>
+            </div>
+            <div class="scene-all">
+                <div class="scene-item">
+                    <div class="img">
+                        <img src="http://zduck.h4.941jz.cn/public/uploads/img/20210322/c8fa1eab59cdcbaa8f19376c7b90d3bc.jpg"
+                             alt="">
+                    </div>
+                    <div class="name">成都加盟店</div>
+                </div>
+                <div class="scene-item">
+                    <div class="img">
+                        <img src="http://zduck.h4.941jz.cn/public/uploads/img/20210322/c8fa1eab59cdcbaa8f19376c7b90d3bc.jpg"
+                             alt="">
+                    </div>
+                    <div class="name">成都加盟店</div>
+                </div>
+                <div class="scene-item">
+                    <div class="img">
+                        <img src="http://zduck.h4.941jz.cn/public/uploads/img/20210322/c8fa1eab59cdcbaa8f19376c7b90d3bc.jpg"
+                             alt="">
+                    </div>
+                    <div class="name">成都加盟店</div>
+                </div>
+                <div class="scene-item">
+                    <div class="img">
+                        <img src="http://zduck.h4.941jz.cn/public/uploads/img/20210322/c8fa1eab59cdcbaa8f19376c7b90d3bc.jpg"
+                             alt="">
+                    </div>
+                    <div class="name">成都加盟店</div>
+                </div>
+                <div class="scene-item">
+                    <div class="img">
+                        <img src="http://zduck.h4.941jz.cn/public/uploads/img/20210322/c8fa1eab59cdcbaa8f19376c7b90d3bc.jpg"
+                             alt="">
+                    </div>
+                    <div class="name">成都加盟店</div>
+                </div>
+                <div class="scene-item">
+                    <div class="img">
+                        <img src="http://zduck.h4.941jz.cn/public/uploads/img/20210322/c8fa1eab59cdcbaa8f19376c7b90d3bc.jpg"
+                             alt="">
+                    </div>
+                    <div class="name">成都加盟店</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--成功案例-->
+    <div class="successful">
+        <div class="head">
+            <div class="name">成功案例</div>
+        </div>
+        <div class="case-all">
+            <div class="item">
+                <div class="w">
+                    <div class="item-head">
+                        <div class="img">
+                            <img src="http://zduck.h4.941jz.cn/public/static/index/images/case-list.png" alt="">
+                        </div>
+                        <div>
+                            王老板加盟店
+                        </div>
+                    </div>
+                    <div class="ite-content">
+                        合作商王老板两年前还是一家机械厂的职工，工厂效益也不好，王老板觉得这样的生活没有盼头，决定出来自己干点事，了解加盟土门赵鸭子，当时王老板所有的开店钱都是找亲戚朋友借的，开店3个月便把外债还清了，并开了第2家店，现在王老板每天快乐的奔波在两店之间，前不久还换了新车，如今还换了新车，如今小日子充实而有滋味。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="w">
+                    <div class="item-head">
+                        <div class="img">
+                            <img src="http://zduck.h4.941jz.cn/public/static/index/images/case-list.png" alt="">
+                        </div>
+                        <div>
+                            王老板加盟店
+                        </div>
+                    </div>
+                    <div class="ite-content">
+                        合作商王老板两年前还是一家机械厂的职工，工厂效益也不好，王老板觉得这样的生活没有盼头，决定出来自己干点事，了解加盟土门赵鸭子，当时王老板所有的开店钱都是找亲戚朋友借的，开店3个月便把外债还清了，并开了第2家店，现在王老板每天快乐的奔波在两店之间，前不久还换了新车，如今还换了新车，如今小日子充实而有滋味。
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="more">
+            <div class="more-box">>> 加载更多 <<</div>
+        </div>
+    </div>
+    <!--底部-->
+    <div class="bottom">
+        <div class="btm">
+            <div class="w">
+                <div>
+                    全国免费招商热线
+                    <p>400-0838-226</p>
+                </div>
+                <div>地址：四川省绵阳市三台县花园镇工业集中发展区绿溪优食谷</div>
+                <a href="https://www.tqlsgroup.com/">铁骑力士集团官网：https://www.tqlsgroup.com/</a>
+            </div>
+        </div>
+        <div class="btm btm-1">
+            <div class="w">
+                <div>
+                    投资有风险 选择请谨慎
+                </div>
+                <div>版权所有 © 绵阳枫叶牧场食品科技有限公司</div>
+                <div>蜀ICP备2021005350号</div>
             </div>
         </div>
     </div>

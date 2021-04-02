@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c8e99f0-e604-4e2d-94bf-c7b297d34527" name="默认变更列表" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brand_communication.html" beforeDir="false" afterPath="$PROJECT_DIR$/brand_communication.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brand_introduction.html" beforeDir="false" afterPath="$PROJECT_DIR$/brand_introduction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_center.html" beforeDir="false" afterPath="$PROJECT_DIR$/product_center.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +62,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617242233919</updated>
-      <workItem from="1617242244430" duration="24732000" />
+      <workItem from="1617242244430" duration="24792000" />
+      <workItem from="1617327287694" duration="19341000" />
     </task>
     <servers />
   </component>
@@ -77,5 +80,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
